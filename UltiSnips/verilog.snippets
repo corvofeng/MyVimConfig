@@ -1,4 +1,5 @@
-snippet title "For Title"
+
+snippet title "For title"
 /*
  *=============================================================================
  *    Filename:`!p snip.rv = fn`
@@ -9,5 +10,29 @@ snippet title "For Title"
  *      Author: `!v g:snips_author`
  *=============================================================================
  */
+ 
+  $0
+
+endsnippet
+
+snippet module "For module"
+module `!p snip.rv = snip.basename or "untitled"`(${0});
+
+endmodule
+endsnippet
+
+
+snippet init
+initial begin
+    $0
+end
+
+endsnippet
+
+
+snippet always
+always begin
+    $0
+end
 
 endsnippet

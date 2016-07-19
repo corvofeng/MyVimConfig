@@ -1,0 +1,13 @@
+" This Config file is for eclipse
+set hlsearch                    "高亮搜索
+set incsearch                   "输入字符串就开始搜索
+set autochdir                   " 自动切换目录
+
+set list
+set scrolloff=15
+set softtabstop=4
+set autoindent
+
+
+noremap <C-F2> :noh <CR>
+map <C-[> <ESC>

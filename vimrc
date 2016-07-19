@@ -1,4 +1,3 @@
-
 source ~/.vim/vundlerc
 
 syntax on
@@ -26,9 +25,6 @@ set background=light
 
 "let g:solarized_hitrail   = 1
 
-"colorscheme elflord 
-""colorscheme molokai_nancle
-
 set showmatch             " 括号配对
 set linebreak             " 整词换行
 set whichwrap=b,s,<,>,[,] " 设置整词换行
@@ -40,8 +36,8 @@ set clipboard+=unnamed
 
 set hlsearch                    "高亮搜索
 set incsearch                   "输入字符串就开始搜索
-set autochdir                   " 自动切换目录
 
+set autochdir                   " 自动切换目录
 
 set showcmd
 
@@ -63,12 +59,12 @@ filetype plugin indent on
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "python 配置文件        
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:pydiction_location='~/.vim/complete-dict'
+"let g:pydiction_location='~/.vim/complete-dict'
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
 autocmd FileType python set omnifunc=pythoncomplete#Complete  
 autocmd FileType c set omnifunc=ccomplete#Complete 
 
-let g:vjde_completion_key='<c-space>' 
+"let g:vjde_completion_key='<c-space>' 
 au Filetype c,cpp setl sw=8 sts=8 ts=8 et       "C, C++: 缩进8个字符
 
 "au FileType java setl omnifunc=javacomplete#Complete sw=4 sts=4 et
@@ -86,6 +82,9 @@ if has("autocmd")
     autocmd FileType python set complete+=k/home/corvo/.vim/pydiction iskeyword+=.,(
 endif " has("autocmd")
 
+
+"保存文件
+nmap <c-s> :w<CR>
 
 "高亮搜索后关闭高亮
 map<F2> : noh <CR>
@@ -105,12 +104,6 @@ endfunc
 
 " Ctags的设定
 map <C-F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
-
-" gdb 
-map <F7> :call Rungdb()<CR>
-func! Rungdb()
-    call Xterm("gcc -g % -o %< ; gdb -q ./%<")
-endfunc
 
 let Tlist_Auto_Highlight_Tag   = 1
 let Tlist_Auto_Update          = 1
@@ -137,9 +130,9 @@ map <S-F10> :call CompileAndRun()<CR>
 func! CompileAndRun()
     exec "w"
     if &filetype == 'c'                         "C and C++
-        call Xterm("gcc % -o %< && ./%<")
+        call Xterm("gcc -g % -o %< && ./%<")
     elseif &filetype == 'cpp'
-        call Xterm("g++ % -o %< && ./%<")
+        call Xterm("g++ -g  % -o %< && ./%<")
     elseif &filetype == 'sh'                    "Shell Script
         call Xterm("chmod u+x % && ./%")
     elseif &filetype == 'java'                  "Java Source 
@@ -149,7 +142,7 @@ func! CompileAndRun()
     elseif &filetype == 'asm'                   "For asm
         call Xterm("nasm % -o %<.bin")
     elseif &filetype == 'python'                "For Python
-        call Xterm("python2 %")
+        call Xterm("python %")
     endif
 endfunc
 
@@ -199,7 +192,7 @@ let g:vim_markdown_frontmatter             = 1
 
 
 "YouCompleteMe
-let g:ycm_global_ycm_extra_conf = '~/.vim/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
 " YouCompleteMe setup
 let g:ycm_autoclose_preview_window_after_completion = 1
@@ -215,6 +208,7 @@ let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
 " For Snippet
 let g:snips_author = "corvo"
+let g:snips_projectname = "default"
 
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3

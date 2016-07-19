@@ -35,11 +35,11 @@ match LeaderTab /^\t/
 set cursorline   " 突出显示当前行
 set laststatus=2 " 显示状态栏
 
-"runtime! ftplugin/man.vim
+" runtime! ftplugin/man.vim
 
 set lines=35 columns=90 
 
-"粘贴
+"复制和粘贴
 vmap<C-c> "+y
 vmap<C-x> "+c
 vmap<C-v> <ESC>+p

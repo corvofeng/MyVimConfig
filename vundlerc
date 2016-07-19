@@ -35,11 +35,15 @@ Bundle 'jiazhoulvke/MarkdownView'
 Bundle 'python.vim'
 
 " About Complete
-Bundle 'Valloric/YouCompleteMe'
+
+" cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
+Bundle 'Valloric/YouCompleteMe'	 
+
 Bundle 'SuperTab'
+Bundle 'AutoClose'
 Bundle 'honza/vim-snippets'
 Bundle 'SirVer/ultisnips'
-Bundle 'AutoClose'
+
 
 " For View
 Bundle 'minibufexpl.vim'
@@ -51,6 +55,8 @@ Bundle 'Yggdroot/indentLine'
 " For Verilog
 Bundle 'verilog.vim'
 
+" For Spell
+Bundle 'SpellCheck'
 
 
 " My Bundles here:
