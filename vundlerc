@@ -58,6 +58,9 @@ Bundle 'verilog.vim'
 " For Spell
 Bundle 'SpellCheck'
 
+" ToDo List Manager
+Bundle 'vitalk/vim-simple-todo'
+
 
 " My Bundles here:
 "

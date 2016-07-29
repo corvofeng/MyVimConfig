@@ -23,6 +23,8 @@ let g:solarized_diffmode   = "low"
 colorscheme solarized 
 set background=light
 
+set cc=80				" 80字符对齐线
+
 "let g:solarized_hitrail   = 1
 
 set showmatch             " 括号配对
@@ -118,7 +120,9 @@ let Tlist_Ctags_Cmd            = '/usr/bin/ctags'
 nnoremap <silent> <F8> :TlistToggle <CR>
 
 "打开所在文件夹
-map <F10> : silent exec "!nemo ." <CR>
+map <F11> : silent exec "!nemo ." <CR>
+map <S-F11> : silent exec "!gnome-terminal ." <CR>
+
 
 " 使用xterm运行
 function! Xterm(cmd)
