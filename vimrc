@@ -65,6 +65,7 @@ filetype plugin indent on
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
 autocmd FileType python set omnifunc=pythoncomplete#Complete  
 autocmd FileType c set omnifunc=ccomplete#Complete 
+autocmd FileType go set omnifunc=gocomplete#Complete 
 
 "let g:vjde_completion_key='<c-space>' 
 au Filetype c,cpp setl sw=8 sts=8 ts=8 et       "C, C++: 缩进8个字符
@@ -247,4 +248,14 @@ if &diff
 endif
 
 
+let g:ycm_semantic_triggers =  {
+  \   'c' : ['->', '.'],
+  \   'objc' : ['->', '.'],
+  \   'cpp,objcpp' : ['->', '.', '::'],
+  \   'perl' : ['->'],
+  \   'php' : ['->', '::'],
+  \   'cs,java,javascript,d,vim,ruby,python,perl6,scala,vb,elixir,go' : ['.'],
+  \   'lua' : ['.', ':'],
+  \   'erlang' : [':'],
+  \ }
 

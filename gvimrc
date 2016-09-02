@@ -13,6 +13,11 @@ highlight Folded  guibg=#0A0A0A guifg=#76fd3d
 "set listchars=tab:\ \ ,trail:·,eol:¶,extends:>,precedes:<
 "set listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
+" vertical line indentation
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#09AA08'
+let g:indentLine_char = '│'
+
 " convert spaces to tabs when reading file
 "autocmd! bufreadpost * set noexpandtab | retab! 4
 

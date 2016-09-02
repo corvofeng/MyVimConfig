@@ -34,6 +34,11 @@ Bundle 'jiazhoulvke/MarkdownView'
 " For Python
 Bundle 'python.vim'
 
+" For Go
+Bundle 'fatih/vim-go'
+Bundle 'Blackrush/vim-gocode'
+
+
 " About Complete
 
 " cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
@@ -61,6 +66,7 @@ Bundle 'SpellCheck'
 " ToDo List Manager
 Bundle 'vitalk/vim-simple-todo'
 
+Bundle 'cosminadrianpopescu/vim-sql-workbench'
 
 " My Bundles here:
 "
@@ -74,6 +80,7 @@ Bundle 'vitalk/vim-simple-todo'
 " Bundle 'FuzzyFinder'
 " non github repos
 " Bundle 'git://git.wincent.com/command-t.git'
+
 
 filetype plugin indent on     " required! 
 "

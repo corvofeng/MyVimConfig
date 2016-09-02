@@ -11,3 +11,8 @@ set autoindent
 
 noremap <C-F2> :noh <CR>
 map <C-[> <ESC>
+
+map <C-J> <C-W>j
+map <C-K> <C-W>k
+noremap <c-h> <c-w>h
+noremap <c-l> <c-w>l
