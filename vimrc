@@ -6,6 +6,8 @@ set cindent     "设置c自动缩进
 set smartindent
 set autoindent
 
+let g:tex_conceal = "" "latex关键字不进行自动隐藏
+
 " 普通文件缩进4个字符
 set tabstop=4
 set shiftwidth=4
@@ -32,8 +34,8 @@ set linebreak             " 整词换行
 set whichwrap=b,s,<,>,[,] " 设置整词换行
 set nocompatible          " 删除vi一致性
 
-set matchtime=1         " 匹配括号高亮
-set mouse=a             " 允许鼠标
+set matchtime=1 " 匹配括号高亮
+set mouse=a     " 允许鼠标
 set clipboard+=unnamed
 
 set hlsearch                    "高亮搜索
@@ -68,7 +70,8 @@ autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType go set omnifunc=gocomplete#Complete 
 
 "let g:vjde_completion_key='<c-space>' 
-au Filetype c,cpp setl sw=8 sts=8 ts=8 et       "C, C++: 缩进8个字符
+au Filetype c,cpp setl sw=4 sts=4 ts=4 et       "C, C++: 缩进8个字符
+au Filetype asm setl sw=8 sts=8 ts=8 et       "汇编代码
 
 "au FileType java setl omnifunc=javacomplete#Complete sw=4 sts=4 et
 "autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS 
@@ -145,7 +148,8 @@ func! CompileAndRun()
     elseif &filetype == 'md'                    "For MarkDown
         call Xterm("nemo .")
     elseif &filetype == 'asm'                   "For asm
-        call Xterm("nasm % -o %<.bin")
+        "call Xterm("nasm % -o %<.bin")
+        call Xterm("make run")
     elseif &filetype == 'python'                "For Python
         call Xterm("python %")
     endif
@@ -247,6 +251,14 @@ if &diff
     highlight! link DiffText MatchParen
 endif
 
+" Doxygen
+let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
+let g:DoxygenToolkit_paramTag_pre="@Param " 
+let g:DoxygenToolkit_returnTag="@Returns   " 
+"let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
+"let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
+let g:DoxygenToolkit_authorName="corvo" 
+"let g:DoxygenToolkit_licenseTag="My own license"  
 
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],

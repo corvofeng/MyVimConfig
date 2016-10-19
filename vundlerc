@@ -38,6 +38,8 @@ Bundle 'python.vim'
 Bundle 'fatih/vim-go'
 Bundle 'Blackrush/vim-gocode'
 
+" Doxygen注释
+Bundle 'DoxygenToolkit.vim'
 
 " About Complete
 
@@ -56,6 +58,9 @@ Bundle 'altercation/vim-colors-solarized'
 Bundle 'bling/vim-airline'
 Bundle 'Tabular'
 Bundle 'Yggdroot/indentLine'
+
+" For mysql
+Bundle 'mysqlguru/Vimsql'
 
 " For Verilog
 Bundle 'verilog.vim'
