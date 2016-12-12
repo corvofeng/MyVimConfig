@@ -18,6 +18,12 @@ Bundle 'vcscommand.vim'
 Bundle 'Workspace-Manager'
 Bundle 'fugitive.vim'
 
+"For QQ
+Bundle 'wsdjeg/vim-chat'
+
+" 语法检查插件
+"Bundle 'Syntastic'
+
 " For Latex
 Bundle 'vimlatex'
 
@@ -27,9 +33,11 @@ Bundle 'java_fold'
 Bundle 'javaDoc.vim'
 
 " For Markdown
-Bundle 'Markdown'
-Bundle 'Markdown-syntax'
-Bundle 'jiazhoulvke/MarkdownView'
+Bundle 'plasticboy/vim-markdown'
+
+"Bundle 'Markdown'
+"Bundle 'Markdown-syntax'
+
 
 " For Python
 Bundle 'python.vim'
@@ -41,9 +49,16 @@ Bundle 'Blackrush/vim-gocode'
 " Doxygen注释
 Bundle 'DoxygenToolkit.vim'
 
-" About Complete
+" GraphViz 作图
+Bundle 'wmgraphviz'
 
-" cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
+" AsyncRun 异步运行 Recommend to use Vim 8.0 or later.
+Bundle 'skywind3000/asyncrun.vim'
+
+" About Complete 
+
+
+"YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
 Bundle 'Valloric/YouCompleteMe'	 
 
 Bundle 'SuperTab'
