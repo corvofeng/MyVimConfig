@@ -1,5 +1,8 @@
 set guifont=Source\ Code\ Pro\ 10
 
+
+let g:livepreview_previewer = 'okular'
+
 set foldenable
 set foldmethod=syntax
 "set foldcolumn=2

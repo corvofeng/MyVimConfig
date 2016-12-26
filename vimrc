@@ -6,6 +6,9 @@ set cindent     "设置c自动缩进
 set smartindent
 set autoindent
 
+" 自动识别UNIX格式和MS-DOS格式
+set fileformats=unix,dos
+
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
 " 普通文件缩进4个字符
