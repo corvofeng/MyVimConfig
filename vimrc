@@ -1,3 +1,4 @@
+" 添加Vundlerc脚本
 source ~/.vim/vundlerc
 
 syntax on

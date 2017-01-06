@@ -73,6 +73,10 @@ Bundle 'vitalk/vim-simple-todo'
 
 Bundle 'cosminadrianpopescu/vim-sql-workbench'
 
+" Vim 异步语法检查 
+" This plugin requires Vim 8.0 or above to run, or NeoVim
+Bundle 'w0rp/ale'
+
 " My Bundles here:
 "
 " original repos on github

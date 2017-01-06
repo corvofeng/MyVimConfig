@@ -1,10 +1,20 @@
-set guifont=Source\ Code\ Pro\ 10
+set guifont=Source\ Code\ Pro\ Medium\ 11
+let g:Powerline_colorscheme='solarized256'
+
 
 set foldenable
 set foldmethod=syntax
 "set foldcolumn=2
 "highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#76fd3d
+
+" ALE 检查语法错误
+let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_sign_error = '>>'
+let g:ale_sign_warning = '--'
+let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+nmap <silent> <C-k> <Plug>(ale_previous_wrap)
+nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Some ListChars won't use
 "set list 
