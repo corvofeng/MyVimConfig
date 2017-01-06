@@ -7,6 +7,9 @@ set cindent     "设置c自动缩进
 set smartindent
 set autoindent
 
+" 自动识别UNIX格式和MS-DOS格式
+set fileformats=unix,dos
+
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
 " 普通文件缩进4个字符
@@ -144,13 +147,16 @@ func! CompileAndRun()
         call Xterm("g++ -g  % -o %< && ./%<")
     elseif &filetype == 'sh'                    "Shell Script
         call Xterm("chmod u+x % && ./%")
+    elseif &filetype == 'dot'                   "Dot 作图
+        silent exec "! dot -Tpng % -o %<.png"
     elseif &filetype == 'java'                  "Java Source 
         call Xterm("javac % && java %<")
     elseif &filetype == 'md'                    "For MarkDown
         call Xterm("nemo .")
     elseif &filetype == 'asm'                   "For asm
         "call Xterm("nasm % -o %<.bin")
-        call Xterm("make run")
+        "call Xterm("make")
+		AsyncRun make
     elseif &filetype == 'python'                "For Python
         call Xterm("python %")
     endif
@@ -196,6 +202,7 @@ nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
 "endfunction
 
 "markdown 
+let g:vim_markdown_folding_disabled        = 1 " 阻止Markdown折叠
 let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_math                    = 1
 let g:vim_markdown_frontmatter             = 1
@@ -217,8 +224,9 @@ let g:UltiSnipsJumpBackwardTrigger='<c-s-k>'
 let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
 " For Snippet
-let g:snips_author = "corvo"
-let g:snips_projectname = "default"
+let g:snips_author="corvo"
+let g:snips_projectname="default"
+let g:ultisnips_python_style="google"		" python注释风格
 
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
