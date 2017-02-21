@@ -132,25 +132,31 @@ map <F11> : silent exec "!nemo ." <CR>
 map <S-F11> : silent exec "!gnome-terminal ." <CR>
 
 
-" 使用xterm运行
+" 使用xterm运行 
 function! Xterm(cmd)
     silent exec "!xterm -e '". a:cmd ." ; read" ."'"
 endfunction
 
+" 异步执行函数, 使用copen可以打开执行结果窗口
+function! AsRun(cmd)
+    silent exec "AsyncRun ". a:cmd .""
+endfunction
+
 " C C++ sh java的编译和运行  
 map <S-F10> :call CompileAndRun()<CR>
+
 func! CompileAndRun()
     exec "w"
     if &filetype == 'c'                         "C and C++
-        call Xterm("gcc -g % -o %< && ./%<")
+        call AsRun("gcc -g % -o %< && ./%<")
     elseif &filetype == 'cpp'
-        call Xterm("g++ -g  % -o %< && ./%<")
+        call AsRun("g++ -g % -o %< && ./%<")
     elseif &filetype == 'sh'                    "Shell Script
         call Xterm("chmod u+x % && ./%")
     elseif &filetype == 'dot'                   "Dot 作图
         silent exec "! dot -Tpng % -o %<.png"
     elseif &filetype == 'java'                  "Java Source 
-        call Xterm("javac % && java %<")
+        call AsRun("javac % && java %<")
     elseif &filetype == 'md'                    "For MarkDown
         call Xterm("nemo .")
     elseif &filetype == 'asm'                   "For asm
@@ -260,10 +266,10 @@ if &diff
     highlight! link DiffText MatchParen
 endif
 
-" Doxygen
-let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
-let g:DoxygenToolkit_paramTag_pre="@Param " 
-let g:DoxygenToolkit_returnTag="@Returns   " 
+" Doxygen 注释
+"let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
+"let g:DoxygenToolkit_paramTag_pre="@Param " 
+"let g:DoxygenToolkit_returnTag="@Returns   " 
 "let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
 "let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
 let g:DoxygenToolkit_authorName="corvo" 

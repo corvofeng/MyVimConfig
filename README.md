@@ -1,6 +1,7 @@
-# 我的vim配置
+# 我的vim配置(某些异步插件需要8.0以上)
 
 ![Vim](https://img.shields.io/badge/Vim-Best%20Editor-green.svg)
+
 > 作为多年的`linux`和`vim`粉, 我好像正在被分享所融化, 曾经我的`.vim`文件夹中杂乱不堪,
 > 开始接触`vundle`时, 我的内心是拒绝的, 我很辛苦才将`you-complete-me` 配置成功,
 > 不想因为一个包管理而将辛苦配置的插件丢失, 但是linux的吸引之处绝不是混乱不堪, 
@@ -9,7 +10,7 @@
 
 
 ## `.vim`目录结构
-    
+
 ```bash
 .
 ├── bundle/             # 插件存放文件夹
@@ -28,7 +29,7 @@
 
 1.首先添加`.vimrc`等文件
 
-```
+```bash
 ln -s ~/.vimrc ~/.vim/vimrc
 ln -s ~/.gvimrc ~/.vim/gvimrc
 ln -s ~/.vrapperrc ~/.vim/vrapperrc
@@ -115,6 +116,7 @@ endif
 
 
 ## gvimrc
+
 > 我的`gvim`配置, 定义了其它一些配置, 有许多已经有注释了, 就不贴了
 
 ```
@@ -157,5 +159,6 @@ set guioptions-=T
 
 
 ## LICENSE:
+
 Copyright © 2016 corvo. 未经许可不得用于商业用途. 转载请注明出处.
 

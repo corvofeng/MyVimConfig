@@ -58,7 +58,6 @@ Bundle 'skywind3000/asyncrun.vim'
 
 " About Complete 
 
-
 "YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
 Bundle 'Valloric/YouCompleteMe'	 
 
@@ -67,6 +66,8 @@ Bundle 'AutoClose'
 Bundle 'honza/vim-snippets'
 Bundle 'SirVer/ultisnips'
 
+" For CMake
+Bundle 'jalcine/cmake.vim'
 
 " For View
 Bundle 'minibufexpl.vim'
