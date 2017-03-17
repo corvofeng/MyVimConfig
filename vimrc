@@ -19,6 +19,7 @@ set softtabstop=4
 set expandtab
 
 set number      " 显示行号
+set relativenumber " 相对行号设置
 
 set scrolloff=1 " 顶部始终有15行, 保持光标在中间
 
@@ -206,6 +207,10 @@ nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
 "                return a:char
 "        endif
 "endfunction
+
+" C++ 语法检查设置
+let g:syntastic_cpp_compiler = 'clang++'
+let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
 "markdown 
 let g:vim_markdown_folding_disabled        = 1 " 阻止Markdown折叠

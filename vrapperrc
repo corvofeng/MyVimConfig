@@ -4,6 +4,7 @@ set incsearch                   "输入字符串就开始搜索
 set autochdir                   " 自动切换目录
 
 set list
+set listchars=tab:▸-,eol:↩︎,trail:-
 set scrolloff=15
 set softtabstop=4
 set autoindent

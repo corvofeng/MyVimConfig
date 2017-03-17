@@ -34,7 +34,7 @@ Bundle 'java_fold'
 Bundle 'javaDoc.vim'
 
 " For Markdown
-Bundle 'plasticboy/vim-markdown'
+"Bundle 'plasticboy/vim-markdown'
 
 "Bundle 'Markdown'
 "Bundle 'Markdown-syntax'

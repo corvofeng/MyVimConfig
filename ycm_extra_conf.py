@@ -71,6 +71,8 @@ flags = [
 '../llvm/tools/clang/include',
 '-I',
 
+'-I', '/usr/include',
+
 '-I', '/usr/lib/qt/mkspecs/linux-clang',
 '-I', '/usr/include/qt',
 '-I', '/usr/include/qt/QtConcurrent',

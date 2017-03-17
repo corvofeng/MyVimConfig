@@ -1,8 +1,6 @@
 set guifont=Source\ Code\ Pro\ Medium\ 11
 let g:Powerline_colorscheme='solarized256'
 
-
-
 let g:livepreview_previewer = 'okular'
 
 set foldenable
@@ -20,10 +18,12 @@ nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Some ListChars won't use
-"set list 
+set list 
+set listchars=tab:▸-,trail:·,eol:¶,extends:>,precedes:<
+hi NonText ctermfg=7 guifg=gray
+
 "set listchars=tab:»·,trail:·
 "set listchars=tab:┊\ 
-"set listchars=tab:\ \ ,trail:·,eol:¶,extends:>,precedes:<
 "set listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
 
 " vertical line indentation
@@ -71,7 +71,7 @@ set laststatus=2 " 显示状态栏
 
 " runtime! ftplugin/man.vim
 
-set lines=35 columns=90 
+set lines=35 columns=120
 
 "复制和粘贴
 vmap<C-c> "+y
@@ -96,5 +96,4 @@ set guioptions-=T
 
 " 总是显示状态栏
 set laststatus=2
-
 
