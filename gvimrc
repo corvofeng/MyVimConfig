@@ -19,7 +19,7 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
 " Some ListChars won't use
 set list 
-set listchars=tab:▸-,trail:·,eol:¶,extends:>,precedes:<
+set listchars=tab:▸-,trail:·,extends:>,precedes:<
 hi NonText ctermfg=7 guifg=gray
 
 "set listchars=tab:»·,trail:·
