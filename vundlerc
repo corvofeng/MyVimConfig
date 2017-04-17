@@ -16,6 +16,9 @@ Bundle 'ZenCoding.vim'
 Bundle 'JSON.vim'
 Bundle 'vcscommand.vim'
 Bundle 'Workspace-Manager'
+
+
+"For Git
 Bundle 'fugitive.vim'
 
 "For QQ
@@ -33,7 +36,7 @@ Bundle 'javacomplete'
 Bundle 'java_fold'
 Bundle 'javaDoc.vim'
 
-" For Markdown
+" For Markdown 全部被注释掉, 我不喜欢markdown文档变样
 "Bundle 'plasticboy/vim-markdown'
 
 "Bundle 'Markdown'

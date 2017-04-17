@@ -40,7 +40,7 @@ set whichwrap=b,s,<,>,[,] " 设置整词换行
 set nocompatible          " 删除vi一致性
 
 set matchtime=1 " 匹配括号高亮
-set mouse=a     " 允许鼠标
+"set mouse=a     " 允许鼠标
 set clipboard+=unnamed
 
 set hlsearch                    "高亮搜索
@@ -165,7 +165,7 @@ func! CompileAndRun()
         "call Xterm("make")
 		AsyncRun make
     elseif &filetype == 'python'                "For Python
-        call Xterm("python %")
+        call AsRun("python %")
     endif
 endfunc
 
