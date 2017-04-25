@@ -12,6 +12,11 @@ set fileformats=unix,dos
 
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
+" 这是Evernote 不是印象笔记
+let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
+let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
+
+
 " 普通文件缩进4个字符
 set tabstop=4
 set shiftwidth=4

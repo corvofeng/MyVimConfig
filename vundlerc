@@ -31,6 +31,8 @@ Bundle 'wsdjeg/vim-chat'
 Bundle 'vimlatex'
 Bundle 'xuhdev/vim-latex-live-preview'
 
+Bundle 'kakkyz81/evervim'
+
 " For Java
 Bundle 'javacomplete'
 Bundle 'java_fold'
