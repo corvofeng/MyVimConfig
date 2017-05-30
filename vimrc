@@ -1,5 +1,5 @@
 " 添加Vundlerc脚本
-source ~/.vim/vundlerc
+source ~/.vim/vundlerc.vim
 
 syntax on
 
@@ -32,7 +32,7 @@ let g:solarized_termcolors = 256
 let g:solarized_contrast   = "high"
 let g:solarized_diffmode   = "low"
 
-colorscheme solarized 
+colorscheme solarized
 set background=light
 
 set cc=80				" 80字符对齐线
@@ -137,6 +137,12 @@ nnoremap <silent> <F8> :TlistToggle <CR>
 map <F11> : silent exec "!nemo ." <CR>
 map <S-F11> : silent exec "!gnome-terminal ." <CR>
 
+" LOAD YCM
+augroup load_us_ycm
+  autocmd!
+  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
+                     \| autocmd! load_us_ycm
+augroup END
 
 " 使用xterm运行 
 function! Xterm(cmd)
