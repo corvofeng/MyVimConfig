@@ -174,7 +174,7 @@ func! CompileAndRun()
     elseif &filetype == 'asm'                   "For asm
         "call Xterm("nasm % -o %<.bin")
         "call Xterm("make")
-		AsyncRun make
+        AsyncRun make
     elseif &filetype == 'python'                "For Python
         call AsRun("python %")
     endif

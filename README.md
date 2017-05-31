@@ -30,17 +30,18 @@
 1.首先添加`.vimrc`等文件
 
 ```bash
-ln -s ~/.vimrc ~/.vim/vimrc
-ln -s ~/.gvimrc ~/.vim/gvimrc
-ln -s ~/.vrapperrc ~/.vim/vrapperrc
+ln -s ~/.vim/vimrc ~/.vimrc
+ln -s ~/.vim/gvimrc ~/.gvimrc 
+ln -s ~/.vim/vrapperrc ~/.vrapperrc 
 ```
 
-2.打开`vim`, 进入命令模式, 输入`BundleInstall`即可完成自动安装,  默认读者有过基本`vim`操作技能
+2.打开`vim`, 进入命令模式, 输入`:BundleInstall`即可完成自动安装, `:PlugInstall`
+  也要使用. 默认读者有过基本`vim`操作技能
 
 
-## vundlerc
+## vundlerc.vim
 
-> 详见`vundlerc`文件, 其中不免有些混乱, 望大家谅解, 许多插件我也只是安装,
+> 详见`vundlerc.vim`文件, 其中不免有些混乱, 望大家谅解, 许多插件我也只是安装,
 > 还没有能深入使用
 
 
@@ -50,7 +51,7 @@ ln -s ~/.vrapperrc ~/.vim/vrapperrc
 > 希望大家有所收获, 也能自定义出自己的配置, 适合自己的才是最好的
 
 ```
-source ~/.vim/vundlerc          "vim 第一行, 读入vundlerc
+source ~/.vim/vundlerc.vim          "vim 第一行, 读入vundlerc
 
 " 普通文件缩进4个字符
 set tabstop=4
@@ -73,29 +74,39 @@ function! Xterm(cmd)
     silent exec "!xterm -e '". a:cmd ." ; read" ."'"
 endfunction
 
+" 异步执行函数, 使用copen可以打开执行结果窗口
+function! AsRun(cmd)
+    silent exec "AsyncRun ". a:cmd .""
+endfunction
+
 " C C++ sh java的编译和运行  使用Shift+F10 此处调用Xterm
 map <S-F10> :call CompileAndRun()<CR>
+
 func! CompileAndRun()
     exec "w"
     if &filetype == 'c'                         "C and C++
-        call Xterm("gcc -g % -o %< && ./%<")
+        call AsRun("gcc -g % -o %< && ./%<")
     elseif &filetype == 'cpp'
-        call Xterm("g++ -g  % -o %< && ./%<")
+        call AsRun("g++ -g % -o %< && ./%<")
     elseif &filetype == 'sh'                    "Shell Script
         call Xterm("chmod u+x % && ./%")
+    elseif &filetype == 'dot'                   "Dot 作图
+        silent exec "! dot -Tpng % -o %<.png"
     elseif &filetype == 'java'                  "Java Source 
-        call Xterm("javac % && java %<")
+        call AsRun("javac % && java %<")
     elseif &filetype == 'md'                    "For MarkDown
         call Xterm("nemo .")
     elseif &filetype == 'asm'                   "For asm
-        call Xterm("nasm % -o %<.bin")
-    elseif &filetype == 'python'                "For Python(python3)
-        call Xterm("python %")
+        "call Xterm("nasm % -o %<.bin")
+        "call Xterm("make")
+        AsyncRun make
+    elseif &filetype == 'python'                "For Python
+        call AsRun("python %")
     endif
 endfunc
 
 " 自定义的snip中可以插入变量, 可以自行修改用户与项目名称
-let g:snips_author = "corvo"        
+let g:snips_author = "corvo"
 let g:snips_projectname = "default"
 
 " UltiSnips与YCM快捷键有冲突, 改为Ctrl+j补全snippets
