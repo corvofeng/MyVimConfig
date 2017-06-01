@@ -99,6 +99,7 @@ flags = [
 #'-I', '/usr/include/qt/QtXml',
 #'-I', '/usr/include/qt/QtXmlPatterns',
 
+'-I', '/run/media/corvo/Work/petalinux/petalinux-v2015.4-final/components/linux-kernel/xlnx-4.0/include',
 '.',
 '-I',
 './ClangCompleter',

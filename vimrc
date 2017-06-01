@@ -35,7 +35,7 @@ let g:solarized_diffmode   = "low"
 colorscheme solarized
 set background=light
 
-set cc=80				" 80字符对齐线
+set cc=78				" 80字符对齐线
 
 "let g:solarized_hitrail   = 1
 

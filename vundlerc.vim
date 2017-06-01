@@ -55,6 +55,8 @@ Plug 'SirVer/ultisnips'
 "For Git
 Plug 'tpope/vim-fugitive'
 
+" Show Marks
+Plug 'kshenoy/vim-signature'
 Plug 'vim-scripts/fcitx.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/L9'
