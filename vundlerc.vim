@@ -88,7 +88,7 @@ Plug 'vim-scripts/AutoClose'
 " Plug 'thaerkh/vim-workspace'
 
 " For View
-Plug 'vim-scripts/minibufexpl.vim'
+Plug 'vim-scripts/minibufexpl.vim', {'on': []}
 Plug 'altercation/vim-colors-solarized'
 Plug 'vim-scripts/Tabular', {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
