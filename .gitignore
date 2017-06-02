@@ -1,5 +1,6 @@
 # Vim
 
+sessions/
 /bundle/
 *.pyc
 /plugged/

@@ -28,6 +28,9 @@ set number      " 显示行号
 
 set scrolloff=1 " 顶部始终有15行, 保持光标在中间
 
+let g:session_autosave = 'yes'
+let g:session_autoload = 'yes'
+
 let g:solarized_termcolors = 256
 let g:solarized_contrast   = "high"
 let g:solarized_diffmode   = "low"

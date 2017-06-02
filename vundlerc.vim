@@ -8,6 +8,13 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
+" 最近打开文件合集
+Plug 'mhinz/vim-startify'
+Plug 'yegappan/mru'
+
+Plug 'xolox/vim-session'
+Plug 'vim-scripts/vim-misc'
+
 "For QQ
 Plug 'wsdjeg/vim-chat', {'on': []}
 Plug 'xuhdev/vim-latex-live-preview', {'on': []}
