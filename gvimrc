@@ -1,4 +1,4 @@
-set guifont=Source\ Code\ Pro\ Medium\ 11
+set guifont=Source\ Code\ Pro\ Medium\ 9
 let g:Powerline_colorscheme='solarized256'
 
 let g:livepreview_previewer = 'okular'

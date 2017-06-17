@@ -35,6 +35,7 @@ Plug 'cosminadrianpopescu/vim-sql-workbench', {'on': []}
 " AsyncRun 异步运行 Recommend to use Vim 8.0 or later.
 Plug 'skywind3000/asyncrun.vim'
 
+" Evernote
 Plug 'kakkyz81/evervim'
 
 " For mysql
@@ -55,7 +56,6 @@ Plug 'vim-airline/vim-airline-themes'
 " For CMake
 Plug 'jalcine/cmake.vim', {'on': []}
 
-
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
@@ -70,7 +70,7 @@ Plug 'vim-scripts/L9'
 Plug 'vim-scripts/css_color.vim'
 Plug 'vim-scripts/vimdoc'
 Plug 'vim-scripts/cscope.vim'
-Plug 'vim-scripts/ZenCoding.vim'
+" Plug 'vim-scripts/ZenCoding.vim'
 Plug 'vim-scripts/JSON.vim'
 Plug 'vim-scripts/vcscommand.vim'
 " Plug 'Workspace-Manager'
