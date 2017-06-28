@@ -10,10 +10,10 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 " 最近打开文件合集
 Plug 'mhinz/vim-startify'
-Plug 'yegappan/mru'
+"Plug 'yegappan/mru'
 
-Plug 'xolox/vim-session'
-Plug 'vim-scripts/vim-misc'
+"Plug 'xolox/vim-session'
+"Plug 'vim-scripts/vim-misc'
 
 "For QQ
 Plug 'wsdjeg/vim-chat', {'on': []}
@@ -40,8 +40,9 @@ Plug 'kakkyz81/evervim'
 " For mysql
 Plug 'mysqlguru/Vimsql', {'on': []}
 
-" For Markdown 全部被注释掉, 我不喜欢markdown文档变样
 Plug 'godlygeek/tabular'
+
+" For Markdown 全部被注释掉, 我不喜欢markdown文档变样
 Plug 'plasticboy/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'Markdown'
@@ -97,6 +98,7 @@ Plug 'vim-scripts/AutoClose'
 " For View
 Plug 'vim-scripts/minibufexpl.vim', {'on': []}
 Plug 'altercation/vim-colors-solarized'
+Plug 'sickill/vim-monokai'
 Plug 'vim-scripts/Tabular', {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
 

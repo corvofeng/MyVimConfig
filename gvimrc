@@ -1,7 +1,13 @@
 set guifont=Source\ Code\ Pro\ Medium\ 11
 let g:Powerline_colorscheme='solarized256'
+"colorscheme monokai
+colorscheme solarized
+
 
 let g:livepreview_previewer = 'okular'
+
+" 设置以空格打开和关闭折叠
+nmap <space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 
 set foldenable
 set foldmethod=syntax
@@ -10,17 +16,37 @@ set foldmethod=syntax
 highlight Folded  guibg=#0A0A0A guifg=#76fd3d
 
 " ALE 检查语法错误
-let &runtimepath.=',~/.vim/bundle/ale'
-let g:ale_sign_error = '>>'
-let g:ale_sign_warning = '--'
-let g:ale_statusline_format = ['⨉ %d', '⚠ %d', '⬥ ok']
+" let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+" let g:syntastic_c_include_dirs = ['/usr/include/wx-3.0', 'include']
+
+
+" 对C/C++使用Clang进行语法检查
+" let g:ale_linters = {'c': 'clang'}
+"let g:ale_linters = {'cpp': ['clang', 'gcc', 'clangtidy', 'cppcheck', 'cpplint']}
+let g:ale_cpp_gcc = 1
+let ale_cpp_clang_options = '
+    \ -std=c++14 -Wall
+    \ `wx-config --cxxflags --libs std,aui`
+    \ -I/usr/lib/wx/include/gtk2-unicode-3.0
+    \ -I/usr/include/wx-3.0 
+    \ -D_FILE_OFFSET_BITS=64
+    \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
+
+let g:ale_cpp_gcc_options = '
+    \ -std=c++14 -Wall
+    \`wx-config --cxxflags --libs std,aui`
+    \ -I/usr/lib/wx/include/gtk2-unicode-3.0
+    \ -I/usr/include/wx-3.0
+    \ -D_FILE_OFFSET_BITS=64
+    \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
+
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-""""""""""""""""""""""""""""""
-" showmarks setting
-""""""""""""""""""""""""""""""
-" Enable ShowMarks
+" Enable ShowMarks 标记将会被显示出来
 let showmarks_enable = 1
 
 " Some ListChars won't use
@@ -82,7 +108,6 @@ highlight LeaderTab guifg=#666666
 match LeaderTab /^\t/
 
 set cursorline   " 突出显示当前行
-set laststatus=2 " 显示状态栏
 
 " runtime! ftplugin/man.vim
 

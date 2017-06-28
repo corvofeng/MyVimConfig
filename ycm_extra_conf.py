@@ -99,6 +99,8 @@ flags = [
 #'-I', '/usr/include/qt/QtXml',
 #'-I', '/usr/include/qt/QtXmlPatterns',
 
+'-I/usr/include/wx-3.0',
+'-I/usr/lib/wx/include/gtk2-unicode-3.0',
 '-I', '/run/media/corvo/Work/petalinux/petalinux-v2015.4-final/components/linux-kernel/xlnx-4.0/include',
 '.',
 '-I',
