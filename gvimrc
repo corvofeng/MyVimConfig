@@ -1,7 +1,7 @@
-set guifont=Source\ Code\ Pro\ Medium\ 11
+set guifont=Source\ Code\ Pro\ Medium\ 10
 let g:Powerline_colorscheme='solarized256'
-"colorscheme monokai
-colorscheme solarized
+" colorscheme monokai
+ colorscheme solarized
 
 
 let g:livepreview_previewer = 'okular'
