@@ -8,6 +8,8 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
+Plug 'alx741/vinfo'
+
 " 最近打开文件合集
 Plug 'mhinz/vim-startify'
 "Plug 'yegappan/mru'
@@ -89,6 +91,8 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " For Python
 Plug 'vim-scripts/python.vim'
+Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+
 
 Plug 'vim-scripts/SuperTab', {'on': []}
 Plug 'vim-scripts/AutoClose'
@@ -98,7 +102,7 @@ Plug 'vim-scripts/AutoClose'
 " For View
 Plug 'vim-scripts/minibufexpl.vim', {'on': []}
 Plug 'altercation/vim-colors-solarized'
-Plug 'sickill/vim-monokai'
+Plug 'crusoexia/vim-monokai'
 Plug 'vim-scripts/Tabular', {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
 

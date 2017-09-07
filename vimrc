@@ -38,7 +38,7 @@ let g:solarized_diffmode   = "low"
 colorscheme solarized
 set background=light
 
-set cc=78				" 80字符对齐线
+set cc=78               " 80字符对齐线
 
 "let g:solarized_hitrail   = 1
 
@@ -74,7 +74,7 @@ filetype plugin indent on
 "inoremap<expr><CR> pumvisible()? <C-y>: <C-g>u\<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"python 配置文件        
+"python 配置文件
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:pydiction_location='~/.vim/complete-dict'
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
@@ -82,7 +82,7 @@ autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete 
 autocmd FileType go set omnifunc=gocomplete#Complete 
 
-"let g:vjde_completion_key='<c-space>' 
+"let g:vjde_completion_key='<c-space>'
 au Filetype c,cpp setl sw=4 sts=4 ts=4 et       "C, C++: 缩进8个字符
 au Filetype asm setl sw=8 sts=8 ts=8 et       "汇编代码
 
@@ -121,6 +121,11 @@ func! ComplieQt()
         exec "make"
 endfunc
 
+let g:make = 'gmake'
+if exists('make')
+        let g:make = 'make'
+endif
+
 " Ctags的设定
 map <C-F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
@@ -139,6 +144,17 @@ nnoremap <silent> <F8> :TlistToggle <CR>
 "打开所在文件夹
 map <F11> : silent exec "!nemo ." <CR>
 map <S-F11> : silent exec "!gnome-terminal ." <CR>
+
+" Append modeline after last line in buffer.
+" Use substitute() instead of printf() to handle '%%s' modeline in LaTeX
+" files.
+function! AppendModeline()
+  let l:modeline = printf(" vim: set ts=%d sw=%d tw=%d %set :",
+        \ &tabstop, &shiftwidth, &textwidth, &expandtab ? '' : 'no')
+  let l:modeline = substitute(&commentstring, "%s", l:modeline, "")
+  call append(line("$"), l:modeline)
+endfunction
+nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 " LOAD YCM
 augroup load_us_ycm
@@ -184,7 +200,7 @@ func! CompileAndRun()
 endfunc
 
 
-""" For linux Kernel 
+""" For linux Kernel
 """ This is my settings
 """
 """Add any cscope database in current directory
