@@ -1,5 +1,5 @@
 set guifont=Source\ Code\ Pro\ Medium\ 11
-let g:Powerline_colorscheme='solarized256'
+" let g:Powerline_colorscheme='solarized256'
 colorscheme monokai
 " colorscheme solarized
 

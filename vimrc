@@ -35,8 +35,8 @@ let g:solarized_termcolors = 256
 let g:solarized_contrast   = "high"
 let g:solarized_diffmode   = "low"
 
-colorscheme solarized
-set background=light
+" colorscheme solarized
+" set background=light
 
 set cc=78               " 80字符对齐线
 
