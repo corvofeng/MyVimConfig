@@ -38,7 +38,7 @@ Plug 'cosminadrianpopescu/vim-sql-workbench', {'on': []}
 Plug 'skywind3000/asyncrun.vim'
 
 " Evernote
-Plug 'kakkyz81/evervim'
+Plug 'kakkyz81/evervim', {'on': []}
 
 " For mysql
 Plug 'mysqlguru/Vimsql', {'on': []}
@@ -51,9 +51,9 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'Markdown'
 " Plug 'Markdown-syntax'
 
-Plug 'bling/vim-airline'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
+" Plug 'bling/vim-airline'
+" Plug 'vim-airline/vim-airline'
+" Plug 'vim-airline/vim-airline-themes'
 
 
 " For CMake
@@ -63,7 +63,7 @@ Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
 "For Git
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive', {'on': []}
 
 " Show Marks
 Plug 'kshenoy/vim-signature'
@@ -75,7 +75,7 @@ Plug 'vim-scripts/vimdoc'
 Plug 'vim-scripts/cscope.vim'
 " Plug 'vim-scripts/ZenCoding.vim'
 Plug 'vim-scripts/JSON.vim'
-Plug 'vim-scripts/vcscommand.vim'
+Plug 'vim-scripts/vcscommand.vim', {'on': []}
 " Plug 'Workspace-Manager'
 
 " For Latex
@@ -87,7 +87,7 @@ Plug 'vim-scripts/java_fold'
 Plug 'vim-scripts/javaDoc.vim'
 
 " Doxygen注释
-Plug 'vim-scripts/DoxygenToolkit.vim'
+Plug 'vim-scripts/DoxygenToolkit.vim', {'on': []}
 
 " For Python
 Plug 'vim-scripts/python.vim'
