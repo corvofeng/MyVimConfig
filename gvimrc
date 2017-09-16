@@ -64,14 +64,14 @@ let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '│'
 
 " gvim 添加语法检查
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-let g:statline_syntastic = 0
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"let g:statline_syntastic = 0
 
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 "let g:syntastic_check_on_wq = 0
 "let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
@@ -103,7 +103,7 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 
 "set statusline+=%{fugitive#statusline()}
-set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
+"set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
 highlight LeaderTab guifg=#666666
 match LeaderTab /^\t/
 
