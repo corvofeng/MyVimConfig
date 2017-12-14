@@ -46,7 +46,7 @@ Plug 'mysqlguru/Vimsql', {'on': []}
 Plug 'godlygeek/tabular'
 
 " For Markdown 全部被注释掉, 我不喜欢markdown文档变样
-Plug 'plasticboy/vim-markdown'
+"Plug 'plasticboy/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'Markdown'
 " Plug 'Markdown-syntax'
@@ -54,6 +54,10 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'bling/vim-airline'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
+
+" VimWiki
+" Plug 'vimwiki/vimwiki'
+Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 
 " For CMake
@@ -87,7 +91,7 @@ Plug 'vim-scripts/java_fold'
 Plug 'vim-scripts/javaDoc.vim'
 
 " Doxygen注释
-Plug 'vim-scripts/DoxygenToolkit.vim', {'on': []}
+Plug 'vim-scripts/DoxygenToolkit.vim', {}
 
 " For Python
 Plug 'vim-scripts/python.vim'

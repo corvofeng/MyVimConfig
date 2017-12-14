@@ -77,22 +77,22 @@ filetype plugin indent on
 "python 配置文件
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:pydiction_location='~/.vim/complete-dict'
-autocmd Filetype java setlocal omnifunc=javacomplete#Complete 
-autocmd FileType python set omnifunc=pythoncomplete#Complete  
-autocmd FileType c set omnifunc=ccomplete#Complete 
-autocmd FileType go set omnifunc=gocomplete#Complete 
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+autocmd FileType python set omnifunc=pythoncomplete#Complete
+autocmd FileType c set omnifunc=ccomplete#Complete
+autocmd FileType go set omnifunc=gocomplete#Complete
 
 "let g:vjde_completion_key='<c-space>'
 au Filetype c,cpp setl sw=4 sts=4 ts=4 et       "C, C++: 缩进8个字符
 au Filetype asm setl sw=8 sts=8 ts=8 et       "汇编代码
 
 "au FileType java setl omnifunc=javacomplete#Complete sw=4 sts=4 et
-"autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS 
-"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags 
-"autocmd FileType css set omnifunc=csscomplete#CompleteCSS 
-"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags 
-"autocmd FileType php set omnifunc=phpcomplete#CompletePHP 
-"autocmd FileType c set omnifunc=ccomplete#Complete 
+"autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS
+"autocmd FileType html set omnifunc=htmlcomplete#CompleteTags
+"autocmd FileType css set omnifunc=csscomplete#CompleteCSS
+"autocmd FileType xml set omnifunc=xmlcomplete#CompleteTags
+"autocmd FileType php set omnifunc=phpcomplete#CompletePHP
+"autocmd FileType c set omnifunc=ccomplete#Complete
 
 
 let g:pydiction_location='/home/corvo/.vim/complete-dict'
@@ -112,7 +112,7 @@ map<F2> : noh <CR>
 map <F3> :NERDTreeToggle <CR>
 imap <F3> <ESC>: NERDTreeToggle <CR>
 
-"QT 
+"QT
 map <F4>:call ComplieQt() <CR>
 func! ComplieQt()
         exec "w"
@@ -163,7 +163,7 @@ augroup load_us_ycm
                      \| autocmd! load_us_ycm
 augroup END
 
-" 使用xterm运行 
+" 使用xterm运行
 function! Xterm(cmd)
     silent exec "!xterm -e '". a:cmd ." ; read" ."'"
 endfunction
@@ -173,7 +173,7 @@ function! AsRun(cmd)
     silent exec "AsyncRun ". a:cmd .""
 endfunction
 
-" C C++ sh java的编译和运行  
+" C C++ sh java的编译和运行
 map <S-F10> :call CompileAndRun()<CR>
 
 func! CompileAndRun()
@@ -186,7 +186,7 @@ func! CompileAndRun()
         call Xterm("chmod u+x % && ./%")
     elseif &filetype == 'dot'                   "Dot 作图
         silent exec "! dot -Tpng % -o %<.png"
-    elseif &filetype == 'java'                  "Java Source 
+    elseif &filetype == 'java'                  "Java Source
         call AsRun("javac % && java %<")
     elseif &filetype == 'md'                    "For MarkDown
         call Xterm("nemo .")
@@ -199,13 +199,116 @@ func! CompileAndRun()
     endif
 endfunc
 
+""""""""""""""""""""""""""""""
+"Chinese Punctuation
+" 将中文标点直接替换为英文标点
+""""""""""""""""""""""""""""""
+function! CheckChineseMark()
+    "依次检查
+    if search('。')
+        let s:line=search('。')
+        execute s:line . "s/。/\.\ /g"
+    endif
+    
+    if search('。')
+        let s:line=search('。')
+        execute s:line . "s/。/\.\ /g"
+    endif
+
+    if search('，')
+        let s:line=search('，')
+        execute s:line . "s/，/,\ /g"
+    endif
+
+    if search('；')
+        let s:line=search('；')
+        execute s:line . "s/；/:\ /g"
+
+    endif
+
+    if  search('？')
+        let s:line=search('？')
+        execute s:line . "s/？/?\ /g"
+    endif
+
+    if search('：')
+        let s:line=search('：')
+        execute s:line . "s/：/\:\ /g"
+    endif
+
+    if search('‘')
+        let s:line=search('‘')
+        execute s:line . "s/‘/\'/g"
+    endif
+
+    if search('’')
+        let s:line=search('’')
+        execute s:line . "s/’/\'/g"
+    endif
+
+    if search('”')
+        let s:line=search('”')
+        execute s:line . "s/”/\"/g"
+    endif
+
+    if search('“')
+        let s:line=search('“')
+        execute s:line . "s/“/\"/g"
+    endif
+
+    if search('《')
+        let s:line=search('《')
+        execute s:line . "s/《/\</g"
+    endif
+
+    if search('》')
+        let s:linie=search('》')
+        execute s:line . "s/》/\>/g"
+    endif
+
+    if search('——')
+        let s:line=search('——')
+        execute s:line . "s/——/-/g"
+    endif
+
+    if search('）')
+        let s:line=search('）')
+        execute s:line . "s/）/\)/g"
+    endif
+
+    if search('（')
+        let s:line=search('（')
+        execute s:line . "s/（/\(/g"
+    endif
+
+    if search('……')
+        let s:line=search('……')
+        execute s:line . "s/……/^/g"
+    endif
+
+    if search('￥')
+        let s:line=search('￥')
+        execute s:line . "s/￥/$/g"
+    endif
+
+    if search('！')
+        let s:line=search('！')
+        execute s:line . "s/！/!/g"
+    endif
+
+    if  search('·')
+        let s:line=search('·')
+        execute s:line . "s/·/`/g"
+    endif
+
+endfunction
 
 """ For linux Kernel
 """ This is my settings
 """
 """Add any cscope database in current directory
 if filereadable("cscope.out")
-cs add cscope.out 
+cs add cscope.out
 """ else add the database pointed to by environment variable
 elseif $CSCOPE_DB != ""
     cs add $CSCOPE_DB
@@ -242,7 +345,7 @@ nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
 let g:syntastic_cpp_compiler = 'clang++'
 let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
-"markdown 
+"markdown
 let g:vim_markdown_folding_disabled        = 1 " 阻止Markdown折叠
 let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_math                    = 1
@@ -302,13 +405,13 @@ if &diff
 endif
 
 " Doxygen 注释
-"let g:DoxygenToolkit_briefTag_pre="@Synopsis  " 
-"let g:DoxygenToolkit_paramTag_pre="@Param " 
-"let g:DoxygenToolkit_returnTag="@Returns   " 
-"let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------" 
-"let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------" 
-let g:DoxygenToolkit_authorName="corvo" 
-"let g:DoxygenToolkit_licenseTag="My own license"  
+"let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
+"let g:DoxygenToolkit_paramTag_pre="@Param "
+"let g:DoxygenToolkit_returnTag="@Returns   "
+"let g:DoxygenToolkit_blockHeader="--------------------------------------------------------------------------"
+"let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
+let g:DoxygenToolkit_authorName="corvo"
+"let g:DoxygenToolkit_licenseTag="My own license"
 
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],

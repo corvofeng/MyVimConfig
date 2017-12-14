@@ -22,6 +22,23 @@ let g:ale_sign_warning = '⚡'
 let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
 " let g:syntastic_c_include_dirs = ['/usr/include/wx-3.0', 'include']
 
+" VimWiki
+let g:vimwiki_list = [{
+          \ 'path': '~/Dropbox/Diary/vimwiki', 
+          \ 'template_path': '~/vimwiki/templates/',
+          \ 'template_default': 'default',
+          \ 'syntax': 'markdown',
+          \ 'ext': '.md',
+          \ 'path_html': '~/vimwiki/site_html/', 
+          \ 'custom_wiki2html': 'vimwiki_markdown',
+          \ 'template_ext': '.tpl'}]
+
+" 全屏
+function! ToggleFullScreen()
+    call system("wmctrl -r :ACTIVE: -b toggle,fullscreen")
+endfunction
+map <silent> <F7> :call ToggleFullScreen()<CR>
+
 
 " 对C/C++使用Clang进行语法检查
 " let g:ale_linters = {'c': 'clang'}
