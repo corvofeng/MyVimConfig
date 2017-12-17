@@ -20,6 +20,7 @@ highlight Folded  guibg=#0A0A0A guifg=#76fd3d
 let g:ale_sign_error = '✗'
 let g:ale_sign_warning = '⚡'
 let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 " let g:syntastic_c_include_dirs = ['/usr/include/wx-3.0', 'include']
 
 " VimWiki
@@ -59,6 +60,9 @@ let g:ale_cpp_gcc_options = '
     \ -I/usr/include/wx-3.0
     \ -D_FILE_OFFSET_BITS=64
     \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
+
+" C01119函数必须有注释), 暂时进行屏蔽
+let g:ale_python_pylint_options = '--disable=C0111'
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
