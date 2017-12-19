@@ -41,6 +41,17 @@ endfunction
 map <silent> <F7> :call ToggleFullScreen()<CR>
 
 
+" 添加对于Tmux的支持
+function! VimuxSlime()
+  call VimuxSendText(@v)
+  call VimuxSendKeys("Enter")
+endfunction
+
+ " If text is selected, save it in the v buffer and send that buffer it to tmux
+vmap <Leader>vs "vy :call VimuxSlime()<CR>
+
+
+
 " 对C/C++使用Clang进行语法检查
 " let g:ale_linters = {'c': 'clang'}
 "let g:ale_linters = {'cpp': ['clang', 'gcc', 'clangtidy', 'cppcheck', 'cpplint']}

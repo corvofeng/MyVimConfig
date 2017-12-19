@@ -59,6 +59,7 @@ Plug 'godlygeek/tabular'
 " Plug 'vimwiki/vimwiki'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
+Plug 'benmills/vimux'
 
 " For CMake
 Plug 'jalcine/cmake.vim', {'on': []}
