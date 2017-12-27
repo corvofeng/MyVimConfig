@@ -3,25 +3,16 @@ set guifont=Source\ Code\ Pro\ Medium\ 11
 colorscheme monokai
 " colorscheme solarized
 
-
 let g:livepreview_previewer = 'okular'
 
 " 设置以空格打开和关闭折叠
-nmap <space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
+" nmap <space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 
 set foldenable
 set foldmethod=syntax
 "set foldcolumn=2
 "highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#76fd3d
-
-" ALE 检查语法错误
-" let &runtimepath.=',~/.vim/bundle/ale'
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚡'
-let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-" let g:syntastic_c_include_dirs = ['/usr/include/wx-3.0', 'include']
 
 " VimWiki
 let g:vimwiki_list = [{
@@ -41,15 +32,12 @@ endfunction
 map <silent> <F7> :call ToggleFullScreen()<CR>
 
 
-" 添加对于Tmux的支持
-function! VimuxSlime()
-  call VimuxSendText(@v)
-  call VimuxSendKeys("Enter")
-endfunction
-
- " If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <Leader>vs "vy :call VimuxSlime()<CR>
-
+" ALE 检查语法错误
+" let &runtimepath.=',~/.vim/bundle/ale'
+let g:ale_sign_error = '✗'
+let g:ale_sign_warning = '⚡'
+let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 
 " 对C/C++使用Clang进行语法检查
@@ -72,9 +60,8 @@ let g:ale_cpp_gcc_options = '
     \ -D_FILE_OFFSET_BITS=64
     \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
 
-" C01119函数必须有注释), 暂时进行屏蔽
-let g:ale_python_pylint_options = '--disable=C0111'
-
+" C0111: 函数必须有注释, 暂时进行屏蔽
+let g:ale_python_pylint_options = '--disable=C0111,R0903,C0301'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
@@ -95,29 +82,30 @@ let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#09AA08'
 let g:indentLine_char = '│'
 
-" gvim 添加语法检查
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"let g:statline_syntastic = 0
+" gvim 添加语法检查, 曾经使用syntastic, 现已使用ALE
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+" let g:statline_syntastic = 0
 
+" let g:syntastic_c_include_dirs = ['/usr/include/wx-3.0', 'include']
 
-"let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_wq = 0
-"let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_wq = 0
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " 添加对python的语法检查
-let g:syntastic_python_checkers=['pylint']
-let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
+" let g:syntastic_python_checkers=['pylint']
+" let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
 
 
 " convert spaces to tabs when reading file
-"autocmd! bufreadpost * set noexpandtab | retab! 4
+" autocmd! bufreadpost * set noexpandtab | retab! 4
 
 " convert tabs to spaces before writing file
-"autocmd! bufwritepre * set expandtab | retab! 4
+" autocmd! bufwritepre * set expandtab | retab! 4
 
 " convert spaces to tabs after writing file (to show guides again)
 " autocmd! bufwritepost * set noexpandtab | retab! 4
@@ -168,4 +156,3 @@ set guioptions-=T
 
 " 总是显示状态栏
 set laststatus=2
-

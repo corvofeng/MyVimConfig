@@ -10,24 +10,24 @@ set autoindent
 " 自动识别UNIX格式和MS-DOS格式
 set fileformats=unix,dos
 
+
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
 " 这是Evernote 不是印象笔记
 let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
 let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
 
-" 添加对补全的支持
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+let g:VimuxUseNearest=1
+let g:VimuxRunnerInde="vim_attach:1.1"
 
 " 添加对于Tmux的支持
 function! VimuxSlime()
-  call VimuxSendText(@v)
-  call VimuxSendKeys("Enter")
+    call VimuxSendText(@v)
+    call VimuxSendKeys("Enter")
 endfunction
 
  " If text is selected, save it in the v buffer and send that buffer it to tmux
-vmap <Leader>vs "vy :call VimuxSlime()<CR>
+vmap <S-F5>  "vy : call VimuxSlime()<CR>
 
 
 " 普通文件缩进4个字符
