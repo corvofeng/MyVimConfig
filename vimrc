@@ -29,6 +29,8 @@ endfunction
  " If text is selected, save it in the v buffer and send that buffer it to tmux
 vmap <S-F5>  "vy : call VimuxSlime()<CR>
 
+" 命令行下的补全功能
+set wildmode=list:longest
 
 " 普通文件缩进4个字符
 set tabstop=4

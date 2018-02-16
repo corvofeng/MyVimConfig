@@ -1,7 +1,7 @@
 set guifont=Source\ Code\ Pro\ Medium\ 11
 " let g:Powerline_colorscheme='solarized256'
-colorscheme monokai
-" colorscheme solarized
+" "colorscheme monokai
+ colorscheme solarized
 
 let g:livepreview_previewer = 'okular'
 
@@ -13,6 +13,7 @@ set foldmethod=syntax
 "set foldcolumn=2
 "highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#76fd3d
+let g:tlist_markdown_settings = 'markdown;h:Headlins'
 
 " VimWiki
 let g:vimwiki_list = [{
@@ -31,6 +32,39 @@ function! ToggleFullScreen()
 endfunction
 map <silent> <F7> :call ToggleFullScreen()<CR>
 
+" Markdown的折叠
+" https://stackoverflow.com/questions/3828606/vim-markdown-folding
+function! MarkdownLevel()
+    let curline = getline(v:lnum)
+    if curline =~ '^# .*$'
+        return ">1"
+    endif
+    if curline =~ '^## .*$'
+        return ">2"
+    endif
+    if curline =~ '^### .*$'
+        return ">3"
+    endif
+    if curline =~ '^#### .*$'
+        return ">4"
+    endif
+    if curline =~ '^##### .*$'
+        return ">5"
+    endif
+    if curline =~ '^###### .*$'
+        return ">6"
+    endif
+    return "=" 
+endfunction
+
+function! MarkdownFoldText()
+    let foldsize = v:foldend - v:foldstart
+    return getline(v:foldstart).' ('.foldsize.' lines)'
+endfunction
+
+au BufEnter *.md setlocal foldexpr=MarkdownLevel()
+au BufEnter *.md setlocal foldmethod=expr
+au BufEnter *.md setlocal foldtext=MarkdownFoldText()
 
 " ALE 检查语法错误
 " let &runtimepath.=',~/.vim/bundle/ale'
@@ -41,8 +75,8 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 
 " 对C/C++使用Clang进行语法检查
-" let g:ale_linters = {'c': 'clang'}
-"let g:ale_linters = {'cpp': ['clang', 'gcc', 'clangtidy', 'cppcheck', 'cpplint']}
+let g:ale_linters = {'c': 'clang'}
+let g:ale_linters = {'cpp': ['clang', 'gcc', 'clangtidy', 'cppcheck', 'cpplint']}
 let g:ale_cpp_gcc = 1
 let ale_cpp_clang_options = '
     \ -std=c++14 -Wall
@@ -62,6 +96,7 @@ let g:ale_cpp_gcc_options = '
 
 " C0111: 函数必须有注释, 暂时进行屏蔽
 let g:ale_python_pylint_options = '--disable=C0111,R0903,C0301'
+
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
