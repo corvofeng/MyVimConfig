@@ -1,4 +1,7 @@
-" 添加Vundlerc脚本
+" vim: foldmethod=marker foldcolumn=3
+" 使用magic line, zR 打开全部折叠
+
+" 添加Vundlerc脚本 {{{
 source ~/.vim/vundlerc.vim
 
 syntax on
@@ -120,6 +123,10 @@ endif " has("autocmd")
 "保存文件
 nmap <c-s> :w<CR>
 
+" }}}
+
+" 自定义函数 {{{
+
 "高亮搜索后关闭高亮
 map<F2> : noh <CR>
 
@@ -213,6 +220,10 @@ func! CompileAndRun()
         call AsRun("python %")
     endif
 endfunc
+
+" }}}
+
+" 工具函数 {{{
 
 """"""""""""""""""""""""""""""
 "Chinese Punctuation

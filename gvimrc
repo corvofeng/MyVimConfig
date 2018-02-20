@@ -1,3 +1,6 @@
+" vim: foldmethod=marker foldcolumn=3
+" 使用magic line, zR 打开全部折叠
+
 set guifont=Source\ Code\ Pro\ Medium\ 11
 " let g:Powerline_colorscheme='solarized256'
 " "colorscheme monokai
