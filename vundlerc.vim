@@ -27,21 +27,21 @@ Plug 'Blackrush/vim-gocode', {'on': []}
 
 " About Complete 
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
-Plug 'Valloric/YouCompleteMe', {'on': []}
+" Plug 'Valloric/YouCompleteMe', {'on': []}
 
 " ToDo List Manager
-Plug 'vitalk/vim-simple-todo', {'on': []}
+" Plug 'vitalk/vim-simple-todo', {'on': []}
 
-Plug 'cosminadrianpopescu/vim-sql-workbench', {'on': []}
+" Plug 'cosminadrianpopescu/vim-sql-workbench', {'on': []}
 
 " AsyncRun 异步运行 Recommend to use Vim 8.0 or later.
 Plug 'skywind3000/asyncrun.vim'
 
 " Evernote
-Plug 'kakkyz81/evervim', {'on': []}
+" Plug 'kakkyz81/evervim', {'on': []}
 
 " For mysql
-Plug 'mysqlguru/Vimsql', {'on': []}
+" Plug 'mysqlguru/Vimsql', {'on': []}
 
 Plug 'godlygeek/tabular'
 
@@ -87,9 +87,9 @@ Plug 'vim-scripts/vcscommand.vim', {'on': []}
 Plug 'vim-scripts/vimlatex'
 
 " For Java
-Plug 'vim-scripts/javacomplete'
-Plug 'vim-scripts/java_fold'
-Plug 'vim-scripts/javaDoc.vim'
+" Plug 'vim-scripts/javacomplete'
+" Plug 'vim-scripts/java_fold'
+" Plug 'vim-scripts/javaDoc.vim'
 
 " Doxygen注释
 Plug 'vim-scripts/DoxygenToolkit.vim', {}
@@ -116,10 +116,10 @@ Plug 'Yggdroot/indentLine'
 Plug 'w0rp/ale'
 
 " For Verilog
-Plug 'vim-scripts/verilog.vim'
+" Plug 'vim-scripts/verilog.vim'
 
 " For Spell
-Plug 'vim-scripts/SpellCheck'
+" Plug 'vim-scripts/SpellCheck'
 
 call plug#end()
 
