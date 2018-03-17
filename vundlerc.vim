@@ -27,7 +27,7 @@ Plug 'Blackrush/vim-gocode', {'on': []}
 
 " About Complete 
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
-" Plug 'Valloric/YouCompleteMe', {'on': []}
+Plug 'Valloric/YouCompleteMe', {'on': []}
 
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
@@ -46,7 +46,7 @@ Plug 'skywind3000/asyncrun.vim'
 Plug 'godlygeek/tabular'
 
 " For Markdown 全部被注释掉, 我不喜欢markdown文档变样
-"Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'Markdown'
 " Plug 'Markdown-syntax'
@@ -108,6 +108,8 @@ Plug 'vim-scripts/AutoClose'
 Plug 'vim-scripts/minibufexpl.vim', {'on': []}
 Plug 'altercation/vim-colors-solarized'
 Plug 'crusoexia/vim-monokai'
+Plug 'jaromero/vim-monokai-refined'
+
 Plug 'vim-scripts/Tabular', {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
 

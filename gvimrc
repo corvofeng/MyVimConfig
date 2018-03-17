@@ -3,7 +3,7 @@
 
 set guifont=Source\ Code\ Pro\ Medium\ 11
 " let g:Powerline_colorscheme='solarized256'
-" "colorscheme monokai
+" colorscheme monokai
  colorscheme solarized
 
 let g:livepreview_previewer = 'okular'
@@ -17,6 +17,8 @@ set foldmethod=syntax
 "highlight NonText guibg=#060606
 highlight Folded  guibg=#0A0A0A guifg=#76fd3d
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
+let g:tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
+
 
 " VimWiki
 let g:vimwiki_list = [{
