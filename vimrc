@@ -91,6 +91,11 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
+"Markdown 禁止文本中转换
+set conceallevel=2
+let g:tex_conceal = ""
+let g:vim_markdown_conceal = 0
+
 "Make enter finish the completion popup menu
 "inoremap<expr><CR> pumvisible()? <C-y>: <C-g>u\<CR>
 
@@ -441,6 +446,9 @@ endif
 "let g:DoxygenToolkit_blockFooter="----------------------------------------------------------------------------"
 let g:DoxygenToolkit_authorName="corvo"
 "let g:DoxygenToolkit_licenseTag="My own license"
+
+" 在NERDTree中不显示pyc文件
+let NERDTreeIgnore = ['\.pyc$']
 
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
