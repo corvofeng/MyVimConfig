@@ -1,7 +1,9 @@
 " vim: foldmethod=marker foldcolumn=3
 " 使用magic line, zR 打开全部折叠
 
-" 添加Vundlerc脚本 {{{
+" 基础设置 {{{
+
+" 添加Vundlerc脚本 
 source ~/.vim/vundlerc.vim
 
 syntax on
@@ -10,6 +12,7 @@ set cindent     "设置c自动缩进
 set smartindent
 set autoindent
 
+set foldlevel=1
 " 自动识别UNIX格式和MS-DOS格式
 set fileformats=unix,dos
 
