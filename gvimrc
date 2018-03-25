@@ -162,6 +162,10 @@ let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#buffer_nr_show = 1 " 显示buffer编号
 let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'default'
+
+
 
 "set statusline+=%{fugitive#statusline()}
 "set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
