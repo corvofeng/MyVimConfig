@@ -48,6 +48,8 @@ Plug 'skywind3000/asyncrun.vim'
 
 Plug 'godlygeek/tabular'
 
+Plug 'ctrlpvim/ctrlp.vim'
+
 " For Markdown 全部被注释掉, 我不喜欢markdown文档变样
 Plug 'plasticboy/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
@@ -57,6 +59,8 @@ Plug 'plasticboy/vim-markdown'
 " Plug 'bling/vim-airline'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 
 " VimWiki
 " Plug 'vimwiki/vimwiki'
