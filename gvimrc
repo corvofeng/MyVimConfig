@@ -81,7 +81,7 @@ let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 " 对C/C++使用Clang进行语法检查
 let g:ale_linters = {'c': 'clang'}
-let g:ale_linters = {'cpp': ['clang', 'gcc', 'clangtidy', 'cppcheck', 'cpplint']}
+let g:ale_linters = {'cpp': ['clangtidy','cpplint']}
 let g:ale_cpp_gcc = 1
 let ale_cpp_clang_options = '
     \ -std=c++14 -Wall
@@ -98,6 +98,8 @@ let g:ale_cpp_gcc_options = '
     \ -I/usr/include/wx-3.0
     \ -D_FILE_OFFSET_BITS=64
     \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
+let g:ale_cpp_clangtidy_options = 'p ./build/'
+let ale_c_build_dir='./build'
 
 " C0111: 函数必须有注释, 暂时进行屏蔽
 let g:ale_python_pylint_options = '--disable=C0111,R0903,C0301'

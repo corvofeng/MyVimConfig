@@ -190,6 +190,10 @@ augroup load_us_ycm
                      \| autocmd! load_us_ycm
 augroup END
 
+if filereadable("./_gvimrc")
+    source _gvimrc
+endif
+
 " 使用xterm运行
 function! Xterm(cmd)
     silent exec "!xterm -e '". a:cmd ." ; read" ."'"

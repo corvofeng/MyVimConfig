@@ -18,8 +18,11 @@ Plug 'mhinz/vim-startify'
 "Plug 'vim-scripts/vim-misc'
 
 "For QQ
-Plug 'wsdjeg/vim-chat', {'on': []}
+" Plug 'wsdjeg/vim-chat', {'on': []}
+
 Plug 'xuhdev/vim-latex-live-preview', {'on': []}
+
+Plug 'mattn/emmet-vim'
 
 " For Go
 Plug 'fatih/vim-go', {'on': []}
@@ -27,7 +30,7 @@ Plug 'Blackrush/vim-gocode', {'on': []}
 
 " About Complete 
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
-Plug 'Valloric/YouCompleteMe', {'on': []}
+Plug 'Valloric/YouCompleteMe' ", {'on': []}
 
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
@@ -92,7 +95,7 @@ Plug 'vim-scripts/vimlatex'
 " Plug 'vim-scripts/javaDoc.vim'
 
 " Doxygen注释
-Plug 'vim-scripts/DoxygenToolkit.vim', {}
+Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " For Python
 Plug 'vim-scripts/python.vim'
