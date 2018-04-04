@@ -31,14 +31,7 @@ Plug 'Blackrush/vim-gocode', {'for': 'go'}
 
 " About Complete 
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
-Plug 'Valloric/YouCompleteMe', {
-     \ 'build'      : {
-        \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
-        \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
-        \ }
-     \ }
+Plug 'Valloric/YouCompleteMe', {'on': []}
 
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
@@ -135,7 +128,7 @@ Plug 'Yggdroot/indentLine'
 
 " Vim 异步语法检查 
 " This plugin requires Vim 8.0 or above to run, or NeoVim
-" Plug 'w0rp/ale', {'on':[]}
+Plug 'w0rp/ale', {'on':[]}
 
 " For Verilog
 " Plug 'vim-scripts/verilog.vim'
