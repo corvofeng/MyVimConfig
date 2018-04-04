@@ -400,10 +400,13 @@ let g:ycm_min_num_of_chars_for_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
 " UltiSnips setup
+" 使用c-b 可以由$1跳转至$2
+" 使用c-z 可以由$2跳回$1
 let g:UltiSnipsExpandTrigger='<c-j>'
-let g:UltiSnipsJumpForwardTrigger='<c-k>'
-let g:UltiSnipsJumpBackwardTrigger='<c-s-k>'
-let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
+let g:UltiSnipsListSnippets='<c-tab>'
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsSnippetDirectories=[$HOME.'.vim/plugged/vim-snippets/snippets', $HOME.'/.vim/UltiSnips']
 
 " For Snippet
 let g:snips_author="corvo"
