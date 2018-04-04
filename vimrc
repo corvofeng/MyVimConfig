@@ -128,6 +128,22 @@ if has("autocmd")
 endif " has("autocmd")
 
 
+" fzf 配置
+let g:fzf_action = {
+  \ 'ctrl-t': 'tab split',
+  \ 'ctrl-x': 'split',
+  \ 'ctrl-v': 'vsplit' }
+
+" Default fzf layout
+" - down / up / left / right
+let g:fzf_layout = { 'down': '~40%' }
+
+" Minibufexpl
+let g:miniBufExplMapWindowNavVim = 1
+let g:miniBufExplMapWindowNavArrows = 1
+let g:miniBufExplMapCTabSwitchBufs = 1
+let g:miniBufExplModSelTarget = 1
+
 "保存文件
 nmap <c-s> :w<CR>
 
@@ -193,9 +209,9 @@ augroup load_us_ycm
                      \| autocmd! load_us_ycm
 augroup END
 
-if filereadable("./_gvimrc")
-    source _gvimrc
-endif
+" if filereadable("./_gvimrc")
+"     source _gvimrc
+" endif
 
 " 使用xterm运行
 function! Xterm(cmd)
@@ -247,7 +263,7 @@ function! CheckChineseMark()
         let s:line=search('。')
         execute s:line . "s/。/\.\ /g"
     endif
-    
+
     if search('。')
         let s:line=search('。')
         execute s:line . "s/。/\.\ /g"
@@ -411,7 +427,7 @@ let g:UltiSnipsSnippetDirectories=[$HOME.'.vim/plugged/vim-snippets/snippets', $
 " For Snippet
 let g:snips_author="corvo"
 let g:snips_projectname="default"
-let g:ultisnips_python_style="google"		" python注释风格
+let g:ultisnips_python_style="google"       " python注释风格
 
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3

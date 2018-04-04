@@ -10,7 +10,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 Plug 'alx741/vinfo'
 
-" 最近打开文件合集
+" Vim开机画面
 Plug 'mhinz/vim-startify'
 "Plug 'yegappan/mru'
 
@@ -22,20 +22,27 @@ Plug 'mhinz/vim-startify'
 
 Plug 'xuhdev/vim-latex-live-preview', {'on': []}
 
-Plug 'mattn/emmet-vim'
+" For html
+Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " For Go
-Plug 'fatih/vim-go', {'on': []}
-Plug 'Blackrush/vim-gocode', {'on': []}
+Plug 'fatih/vim-go', {'for': 'go'}
+Plug 'Blackrush/vim-gocode', {'for': 'go'}
 
 " About Complete 
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
-Plug 'Valloric/YouCompleteMe' ", {'on': []}
+Plug 'Valloric/YouCompleteMe', {
+     \ 'build'      : {
+        \ 'mac'     : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'unix'    : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'windows' : './install.sh --clang-completer --system-libclang --omnisharp-completer',
+        \ 'cygwin'  : './install.sh --clang-completer --system-libclang --omnisharp-completer'
+        \ }
+     \ }
 
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
 
-" Plug 'cosminadrianpopescu/vim-sql-workbench', {'on': []}
 
 " AsyncRun 异步运行 Recommend to use Vim 8.0 or later.
 Plug 'skywind3000/asyncrun.vim'
@@ -45,40 +52,41 @@ Plug 'skywind3000/asyncrun.vim'
 
 " For mysql
 " Plug 'mysqlguru/Vimsql', {'on': []}
+" Plug 'cosminadrianpopescu/vim-sql-workbench', {'on': []}
 
-Plug 'godlygeek/tabular'
+" Plug 'ctrlpvim/ctrlp.vim'
 
-Plug 'ctrlpvim/ctrlp.vim'
-
-" For Markdown 全部被注释掉, 我不喜欢markdown文档变样
+" For Markdown
 Plug 'plasticboy/vim-markdown'
 " Plug 'plasticboy/vim-markdown'
 " Plug 'Markdown'
 " Plug 'Markdown-syntax'
 
+" Airline变得再好看也是airline, 放弃了
 " Plug 'bling/vim-airline'
 " Plug 'vim-airline/vim-airline'
 " Plug 'vim-airline/vim-airline-themes'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
 
 " VimWiki
 " Plug 'vimwiki/vimwiki'
 Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
-Plug 'benmills/vimux'
+" Work with tmux
+" Plug 'benmills/vimux'
 
 " For CMake
-Plug 'jalcine/cmake.vim', {'on': []}
+Plug 'jalcine/cmake.vim', {'for': 'cmake'}
 
+" 很好很强大, 快速产生写好的代码片段
 Plug 'honza/vim-snippets'
 Plug 'SirVer/ultisnips'
 
-"For Git
-Plug 'tpope/vim-fugitive', {'on': []}
+" For Git
+" Plug 'tpope/vim-fugitive', {'on': []}
 
 " Show Marks
 Plug 'kshenoy/vim-signature'
+
 Plug 'vim-scripts/fcitx.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/L9'
@@ -86,13 +94,15 @@ Plug 'vim-scripts/css_color.vim'
 Plug 'vim-scripts/vimdoc'
 Plug 'vim-scripts/cscope.vim'
 " Plug 'vim-scripts/ZenCoding.vim'
-Plug 'vim-scripts/JSON.vim'
-Plug 'vim-scripts/vcscommand.vim', {'on': []}
+Plug 'vim-scripts/JSON.vim', {'for': 'json'}
+Plug 'vim-scripts/vcscommand.vim'
 " Plug 'Workspace-Manager'
 
 " For Latex
 Plug 'vim-scripts/vimlatex'
 
+Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
+Plug 'junegunn/fzf.vim'
 " For Java
 " Plug 'vim-scripts/javacomplete'
 " Plug 'vim-scripts/java_fold'
@@ -102,27 +112,30 @@ Plug 'vim-scripts/vimlatex'
 Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " For Python
-Plug 'vim-scripts/python.vim'
-Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
+Plug 'vim-scripts/python.vim', {'for': 'python'}
+" Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
-Plug 'vim-scripts/SuperTab', {'on': []}
+" Plug 'vim-scripts/SuperTab', {'on': []}
 Plug 'vim-scripts/AutoClose'
 
 " Plug 'thaerkh/vim-workspace'
 
 " For View
-Plug 'vim-scripts/minibufexpl.vim', {'on': []}
+Plug 'vim-scripts/minibufexpl.vim'
+
+" Some themes
 Plug 'altercation/vim-colors-solarized'
 Plug 'crusoexia/vim-monokai'
 Plug 'jaromero/vim-monokai-refined'
+Plug 'rakr/vim-one'
 
 Plug 'vim-scripts/Tabular', {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
 
 " Vim 异步语法检查 
 " This plugin requires Vim 8.0 or above to run, or NeoVim
-Plug 'w0rp/ale'
+" Plug 'w0rp/ale', {'on':[]}
 
 " For Verilog
 " Plug 'vim-scripts/verilog.vim'
@@ -140,7 +153,7 @@ call vundle#rc()              " 必须设置在前
 " Bundle 'Syntastic'
 
 " GraphViz 作图
-Bundle 'wmgraphviz'
+" Bundle 'wmgraphviz'
 
 
 

@@ -3,8 +3,9 @@
 
 set guifont=Source\ Code\ Pro\ Medium\ 11
 " let g:Powerline_colorscheme='solarized256'
-colorscheme monokai
-" colorscheme solarized
+" colorscheme monokai
+colorscheme solarized
+" colorscheme one
 " colorscheme monokai
 
 let g:livepreview_previewer = 'okular'
