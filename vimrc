@@ -422,7 +422,12 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsListSnippets='<c-tab>'
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
-let g:UltiSnipsSnippetDirectories=[$HOME.'.vim/plugged/vim-snippets/snippets', $HOME.'/.vim/UltiSnips']
+let g:UltiSnipsSnippetDirectories=[
+    \$HOME.'/.vim/plugged/vim-snippets/UltiSnips',
+    \$HOME.'/.vim/plugged/vim-snippets',
+    \$HOME.'/.vim/UltiSnips']
+let g:UltiSnipsEditSplit="vertical"
+
 
 " For Snippet
 let g:snips_author="corvo"
