@@ -3,6 +3,8 @@
 
 " 基础设置 {{{
 
+" echo "Before Vimrc"
+
 " 添加Vundlerc脚本 
 source ~/.vim/vundlerc.vim
 
@@ -19,9 +21,9 @@ set fileformats=unix,dos
 
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
-" 这是Evernote 不是印象笔记
-let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
-let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
+" 这是Evernote 不是印象笔记, 已经不在使用
+" let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
+" let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
 
 let g:VimuxUseNearest=1
 let g:VimuxRunnerInde="vim_attach:1.1"
@@ -126,6 +128,24 @@ let g:pydiction_location='/home/corvo/.vim/complete-dict'
 if has("autocmd")
     autocmd FileType python set complete+=k/home/corvo/.vim/pydiction iskeyword+=.,(
 endif " has("autocmd")
+
+" VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
+" Save in  ls ~/Dropbox/Diary/vimwikidiary
+let g:vimwiki_list = [{
+          \ 'path': '~/Dropbox/Diary/', 
+          \ 'template_path': '~/vimwiki/templates/',
+          \ 'diary_rel_path': 'vimwikidiary/',
+          \ 'template_default': 'default',
+          \ 'syntax': 'markdown',
+          \ 'ext': '.md',
+          \ 'path_html': '~/vimwiki/site_html/', 
+          \ 'custom_wiki2html': 'vimwiki_markdown',
+          \ 'template_ext': '.tpl'}]
+
+let g:vimwiki_ext2syntax = {'.md': 'markdown',
+          \ '.mkd': 'markdown',
+          \ '.wiki': 'media'}
+
 
 
 " fzf 配置
@@ -255,7 +275,7 @@ endfunc
 
 """"""""""""""""""""""""""""""
 "Chinese Punctuation
-" 将中文标点直接替换为英文标点
+" 将中文标点直接替换为英文标点 {{{
 """"""""""""""""""""""""""""""
 function! CheckChineseMark()
     "依次检查
@@ -354,8 +374,8 @@ function! CheckChineseMark()
         let s:line=search('·')
         execute s:line . "s/·/`/g"
     endif
-
 endfunction
+" }}}
 
 """ For linux Kernel
 """ This is my settings

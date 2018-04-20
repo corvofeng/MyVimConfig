@@ -1,6 +1,8 @@
 " vim: foldmethod=marker foldcolumn=3
 " 使用magic line, zR 打开全部折叠
 
+"echomsg "Before gvimrc"
+
 set guifont=Source\ Code\ Pro\ Medium\ 11
 " let g:Powerline_colorscheme='solarized256'
 " colorscheme monokai
@@ -22,16 +24,7 @@ let g:tlist_markdown_settings = 'markdown;h:Headlins'
 let g:tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
 
-" VimWiki
-let g:vimwiki_list = [{
-          \ 'path': '~/Dropbox/Diary/vimwiki', 
-          \ 'template_path': '~/vimwiki/templates/',
-          \ 'template_default': 'default',
-          \ 'syntax': 'markdown',
-          \ 'ext': '.md',
-          \ 'path_html': '~/vimwiki/site_html/', 
-          \ 'custom_wiki2html': 'vimwiki_markdown',
-          \ 'template_ext': '.tpl'}]
+
 
 " 全屏
 function! ToggleFullScreen()

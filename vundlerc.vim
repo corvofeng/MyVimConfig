@@ -123,7 +123,7 @@ Plug 'crusoexia/vim-monokai'
 Plug 'jaromero/vim-monokai-refined'
 Plug 'rakr/vim-one'
 
-Plug 'vim-scripts/Tabular', {'on': 'Tabular'}
+Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
 
 " Vim 异步语法检查 
