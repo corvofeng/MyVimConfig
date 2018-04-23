@@ -5,7 +5,7 @@
 
 " echo "Before Vimrc"
 
-" 添加Vundlerc脚本 
+" 添加Vundlerc脚本
 source ~/.vim/vundlerc.vim
 
 syntax on
@@ -18,13 +18,16 @@ set foldlevel=1
 " 自动识别UNIX格式和MS-DOS格式
 set fileformats=unix,dos
 
-
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
 " 这是Evernote 不是印象笔记, 已经不在使用
 " let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
 " let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
 
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Vimux 配置文件
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VimuxUseNearest=1
 let g:VimuxRunnerInde="vim_attach:1.1"
 
@@ -39,6 +42,9 @@ vmap <S-F5>  "vy : call VimuxSlime()<CR>
 
 " 命令行下的补全功能
 set wildmode=list:longest
+
+" 普通文件的补全
+set completeopt=preview,menu
 
 " 普通文件缩进4个字符
 set tabstop=4
@@ -93,11 +99,6 @@ filetype on
 filetype plugin on
 filetype plugin indent on
 
-"Markdown 禁止文本中转换
-set conceallevel=2
-let g:tex_conceal = ""
-let g:vim_markdown_conceal = 0
-
 "Make enter finish the completion popup menu
 "inoremap<expr><CR> pumvisible()? <C-y>: <C-g>u\<CR>
 
@@ -129,8 +130,12 @@ if has("autocmd")
     autocmd FileType python set complete+=k/home/corvo/.vim/pydiction iskeyword+=.,(
 endif " has("autocmd")
 
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
 " Save in  ls ~/Dropbox/Diary/vimwikidiary
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{
           \ 'path': '~/Dropbox/Diary/', 
           \ 'template_path': '~/vimwiki/templates/',
@@ -145,6 +150,16 @@ let g:vimwiki_list = [{
 let g:vimwiki_ext2syntax = {'.md': 'markdown',
           \ '.mkd': 'markdown',
           \ '.wiki': 'media'}
+
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown 语法的设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Markdown 禁止文本中转换
+set conceallevel=2
+let g:tex_conceal = ""
+let g:vim_markdown_conceal = 0
 
 
 
