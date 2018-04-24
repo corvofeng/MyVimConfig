@@ -115,7 +115,7 @@ Plug 'vim-scripts/AutoClose'
 " Plug 'thaerkh/vim-workspace'
 
 " For View
-Plug 'vim-scripts/minibufexpl.vim'
+" Plug 'vim-scripts/minibufexpl.vim'
 
 " Some themes
 Plug 'altercation/vim-colors-solarized'
