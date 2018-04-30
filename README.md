@@ -30,9 +30,10 @@
 1.首先添加`.vimrc`等文件
 
 ```bash
-ln -s ~/.vim/vimrc ~/.vimrc
-ln -s ~/.vim/gvimrc ~/.gvimrc 
-ln -s ~/.vim/vrapperrc ~/.vrapperrc 
+git clone https://github.com/corvofeng/MyVimConfig.git ~/.vim
+ln -s ~/.vim/vimrc.vim .vimrc
+ln -s ~/.vim/gvimrc.vim .gvimrc
+ln -s ~/.vim/vrapperrc ~/.vrapperrc
 ```
 
 2.打开`vim`, 进入命令模式, 输入`:BundleInstall`即可完成自动安装, `:PlugInstall`
