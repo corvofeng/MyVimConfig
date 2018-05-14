@@ -31,8 +31,8 @@
 
 ```bash
 git clone https://github.com/corvofeng/MyVimConfig.git ~/.vim
-ln -s ~/.vim/vimrc.vim .vimrc
-ln -s ~/.vim/gvimrc.vim .gvimrc
+ln -s ~/.vim/vimrc.vim ~/.vimrc
+ln -s ~/.vim/gvimrc.vim ~/.gvimrc
 ln -s ~/.vim/vrapperrc ~/.vrapperrc
 ```
 

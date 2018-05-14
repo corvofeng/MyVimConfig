@@ -109,7 +109,7 @@ filetype plugin indent on
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
-autocmd FileType go set omnifunc=gocomplete#Complete
+autocmd FileType go set nolist "omnifunc=gocomplete#Complete nolist
 
 "let g:vjde_completion_key='<c-space>'
 au Filetype c,cpp setl sw=4 sts=4 ts=4 et       "C, C++: 缩进8个字符
