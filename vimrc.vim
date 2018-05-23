@@ -123,6 +123,11 @@ au Filetype asm setl sw=8 sts=8 ts=8 et       "汇编代码
 "autocmd FileType php set omnifunc=phpcomplete#CompletePHP
 "autocmd FileType c set omnifunc=ccomplete#Complete
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Golang 配置文件
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:go_fmt_fail_silently = 1
+let g:go_fmt_autosave = 0
 
 let g:pydiction_location='/home/corvo/.vim/complete-dict'
 "let g:pydiction_menu_height = 5
