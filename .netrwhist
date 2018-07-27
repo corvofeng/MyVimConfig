@@ -1,7 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =5
-let g:netrw_dirhist_1='/home/corvo/.vim/plugged/ale/autoload/ale'
-let g:netrw_dirhist_2='/etc/modprobe.d'
-let g:netrw_dirhist_3='/home/corvo'
-let g:netrw_dirhist_4='/usr/lib/wx/config'
-let g:netrw_dirhist_5='/home/corvo/Documents/My-Blog/public'
