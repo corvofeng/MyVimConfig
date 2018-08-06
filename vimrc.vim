@@ -398,16 +398,20 @@ function! CheckChineseMark()
 endfunction
 " }}}
 
-""" For linux Kernel
-""" This is my settings
+""" {{{ For cscope, when I read the code  
 """
 """Add any cscope database in current directory
 if filereadable("cscope.out")
-cs add cscope.out
+	set noautochdir
+	cs add cscope.out
 """ else add the database pointed to by environment variable
 elseif $CSCOPE_DB != ""
     cs add $CSCOPE_DB
 endif
+
+function! ReadCSCOPE()
+	set noautochdir
+endfunction
 
 nmap <C-\>s :cs  find s <C-R>=expand("<cword>") <CR><CR>
 nmap <C-\>g :cs  find g <C-R>=expand("<cword>") <CR><CR>
@@ -417,6 +421,10 @@ nmap <C-\>e :cs  find e <C-R>=expand("<cword>") <CR><CR>
 nmap <C-\>f :cs  find f <C-R>=expand("<cword>") <CR><CR>
 nmap <C-\>i :cs  find i <C-R>=expand("<cword>") <CR><CR>
 nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
+
+
+
+" }}}
 
 
 "括号自动补全
@@ -437,8 +445,11 @@ nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
 "endfunction
 
 " C++ 语法检查设置
-let g:syntastic_cpp_compiler = 'clang++'
-let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+" let g:syntastic_cpp_compiler = 'clang++'
+" let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
+
+map <C-F4> :mksession! ~/vim_session <cr> " Quick write session with F2
+map <C-F3> :source ~/vim_session <cr>     " And load session with F3
 
 "markdown
 let g:vim_markdown_folding_disabled        = 1 " 阻止Markdown折叠
@@ -474,6 +485,11 @@ let g:UltiSnipsEditSplit="vertical"
 let g:snips_author="corvo"
 let g:snips_projectname="default"
 let g:ultisnips_python_style="google"       " python注释风格
+
+" 周报相关的标签
+let g:snip_zhoubao_sector="部门"
+let g:snip_zhoubao_group="组"
+let g:snip_zhoubao_author="姓名"
 
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
@@ -516,8 +532,8 @@ endif
 let g:DoxygenToolkit_authorName="corvo"
 "let g:DoxygenToolkit_licenseTag="My own license"
 
-" 在NERDTree中不显示pyc文件
-let NERDTreeIgnore = ['\.pyc$']
+" 在NERDTree中不显示某些后缀的文件
+let NERDTreeIgnore = ['\.pyc$', '\.o$']
 
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
