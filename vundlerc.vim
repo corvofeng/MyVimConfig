@@ -122,6 +122,7 @@ Plug 'altercation/vim-colors-solarized'
 Plug 'crusoexia/vim-monokai'
 Plug 'jaromero/vim-monokai-refined'
 Plug 'rakr/vim-one'
+Plug 'iCyMind/NeoSolarized'
 
 Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
