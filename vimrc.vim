@@ -467,7 +467,7 @@ let g:ycm_filetype_blacklist={'unite': 1}
 let g:ycm_min_num_of_chars_for_completion = 1
 nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
 
-" UltiSnips setup
+" {{{ UltiSnips setup
 " 使用c-b 可以由$1跳转至$2
 " 使用c-z 可以由$2跳回$1
 let g:UltiSnipsExpandTrigger='<c-j>'
@@ -480,22 +480,28 @@ let g:UltiSnipsSnippetDirectories=[
     \$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
 
-
-" For Snippet
+" 标准snip变量
 let g:snips_author="corvo"
 let g:snips_projectname="default"
 let g:ultisnips_python_style="google"       " python注释风格
 
-" 周报相关的标签
+" 自定义: 周报相关的标签
 let g:snip_zhoubao_sector="部门"
 let g:snip_zhoubao_group="组"
 let g:snip_zhoubao_author="姓名"
+
+" 自定义: 邮件脚注
+let g:snip_corp_group="部门"
+let g:snip_corp_name="姓名"
+let g:snip_corp_mail="邮箱"
+let g:snip_corp_phone="手机号码"
+" }}}
 
 let g:indent_guides_auto_colors = 0
 autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
-"Tablur
+"{{{ For Tablur
 let mapleader=','
 if exists(":Tabularize")
 nmap <Leader>a= :Tabularize /=<CR>
@@ -516,7 +522,7 @@ function! s:align()
         call search(repeat('[^|]*|',column).'\s\{-\}'.repeat('.',position),'ce',line('.'))
     endif
 endfunction
-
+"}}}
 
 "For diff
 if &diff
