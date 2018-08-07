@@ -1,4 +1,25 @@
 
+global !p
+import datetime, calendar
+ 
+lastFriday = datetime.date.today()
+oneday = datetime.timedelta(days = 1)
+ 
+while lastFriday.weekday() != calendar.FRIDAY:
+    lastFriday -= oneday
+
+lastMonday = lastFriday
+while lastMonday.weekday() != calendar.MONDAY:
+    lastMonday -= oneday
+
+# 周报的起止日期
+start_end = '{}-{}'.format(lastMonday.strftime('%Y.%m.%d'), lastFriday.strftime('%Y.%m.%d'))
+
+# 周报部门, 所属组, 作者姓名
+author = 'xxx'
+
+ 
+endglobal
 
 snippet title "Hexo post header" b
 ---
@@ -21,4 +42,63 @@ snippet license "License"
 ${0}
 ## LICENSE:
 Copyright © 2017 corvo. 未经许可不得用于商业用途. 转载请注明出处.
+endsnippet
+
+
+snippet zhoubao "周报模板" b
+---
+layout: post
+title: [周报]`!v g:snip_zhoubao_sector` `!v g:snip_zhoubao_group`-`!v g:snip_zhoubao_author` (`!p snip.rv= start_end`)
+date: `!p snip.rv= start_end`
+author: `!v g:snips_author`
+
+---
+
+
+师傅, 主管:
+
+  你们好, 这是我`!p snip.rv= start_end`的周报.
+
+
+1. 上周工作计划;
+
+    <!-- TODO -->
+
+2. 本周工作完成情况;
+
+    <!-- TODO -->
+
+    起止日期: `!p snip.rv= start_end`
+
+3. 下周工作计划;
+
+    <!-- TODO -->
+
+4. 是否存在重大技术/运营问题和困难;
+
+    暂无.
+
+5. 团队气氛如何? 对团队建设方面的建议;
+
+    暂无.
+
+6. 组织间协调中出现的问题, 以及一些内部无法解决的问题;
+
+    暂无.
+
+7. 其它任何工作改进的建议;
+
+    暂无.
+
+endsnippet
+
+
+snippet footter "周报模板" b
+
+---------------------------------------
+
+> `!v g:snip_corp_group` `!v g:snip_corp_name`
+> 发件日期: `!v strftime("%Y-%m-%d")`
+> email: `!v g:snip_corp_mail`
+> Tel: `!v g:snip_corp_phone`
 endsnippet

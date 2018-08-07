@@ -14,8 +14,8 @@ Plug 'alx741/vinfo'
 Plug 'mhinz/vim-startify'
 "Plug 'yegappan/mru'
 
-"Plug 'xolox/vim-session'
-"Plug 'vim-scripts/vim-misc'
+Plug 'xolox/vim-session'
+Plug 'vim-scripts/vim-misc'
 
 "For QQ
 " Plug 'wsdjeg/vim-chat', {'on': []}
@@ -129,7 +129,7 @@ Plug 'Yggdroot/indentLine'
 
 " Vim 异步语法检查 
 " This plugin requires Vim 8.0 or above to run, or NeoVim
-Plug 'w0rp/ale', {'on':[]}
+Plug 'w0rp/ale' ", {'on':[]}
 
 " For Verilog
 " Plug 'vim-scripts/verilog.vim'

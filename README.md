@@ -27,7 +27,7 @@
 
 建议将特定文件软链接到家目录, 这样修改一个文件的同时会进行同步
 
-1.首先添加`.vimrc`等文件
+1. 首先添加`.vimrc`等文件
 
 ```bash
 git clone https://github.com/corvofeng/MyVimConfig.git ~/.vim
@@ -36,8 +36,11 @@ ln -s ~/.vim/gvimrc.vim ~/.gvimrc
 ln -s ~/.vim/vrapperrc ~/.vrapperrc
 ```
 
-2.打开`vim`, 进入命令模式, 输入`:BundleInstall`即可完成自动安装, `:PlugInstall`
-  也要使用. 默认读者有过基本`vim`操作技能
+2. 安装插件
+```bash
+vim +BundleInstall +PlugInstall
+```
+默认读者有过基本`vim`操作技能
 
 
 ## vundlerc.vim
