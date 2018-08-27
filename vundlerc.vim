@@ -10,6 +10,8 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 Plug 'alx741/vinfo'
 
+" Plug 'pathogen.vim'
+
 " Vim开机画面
 Plug 'mhinz/vim-startify'
 "Plug 'yegappan/mru'
@@ -31,7 +33,7 @@ Plug 'Blackrush/vim-gocode', {'for': 'go'}
 
 " About Complete 
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
-Plug 'Valloric/YouCompleteMe', {'on': []}
+Plug 'Valloric/YouCompleteMe' ", {'on': []}
 
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
@@ -71,9 +73,12 @@ Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 Plug 'jalcine/cmake.vim', {'for': 'cmake'}
 
 " 很好很强大, 快速产生写好的代码片段
-Plug 'honza/vim-snippets'
+Plug 'MarcWeber/vim-addon-mw-utils'
+Plug 'tomtom/tlib_vim'
+Plug 'garbas/vim-snipmate'
 Plug 'SirVer/ultisnips'
 
+Plug 'honza/vim-snippets'
 " For Git
 " Plug 'tpope/vim-fugitive', {'on': []}
 
@@ -106,6 +111,8 @@ Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " For Python
 Plug 'vim-scripts/python.vim', {'for': 'python'}
+" Plug 'davidhalter/jedi-vim' ", {'for': 'python'}
+" Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
 " Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
@@ -126,6 +133,7 @@ Plug 'rakr/vim-one'
 Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
 
+
 " Vim 异步语法检查 
 " This plugin requires Vim 8.0 or above to run, or NeoVim
 Plug 'w0rp/ale' ", {'on':[]}
@@ -136,6 +144,7 @@ Plug 'w0rp/ale' ", {'on':[]}
 " For Spell
 " Plug 'vim-scripts/SpellCheck'
 
+Plug 'iCyMind/NeoSolarized'
 call plug#end()
 
 
