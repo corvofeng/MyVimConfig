@@ -69,6 +69,9 @@ let g:solarized_diffmode   = "low"
 
 set cc=78               " 80字符对齐线
 
+" 设置jedi为python3
+let g:jedi#force_py_version=3
+
 "let g:solarized_hitrail   = 1
 
 set showmatch             " 括号配对
@@ -107,7 +110,7 @@ filetype plugin indent on
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "let g:pydiction_location='~/.vim/complete-dict'
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+" autocmd FileType python set omnifunc=pythoncomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType go set nolist "omnifunc=gocomplete#Complete nolist
 
@@ -137,13 +140,22 @@ if has("autocmd")
 endif " has("autocmd")
 
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Markdown 语法的设置
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+"Markdown 禁止文本中转换
+set conceallevel=2
+let g:tex_conceal = ""
+let g:vim_markdown_conceal = 0
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
 " Save in  ls ~/Dropbox/Diary/vimwikidiary
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{
-          \ 'path': '~/Dropbox/Diary/', 
+          \ 'path': '~/Dropbox/Diary/',
           \ 'template_path': '~/vimwiki/templates/',
           \ 'diary_rel_path': 'vimwikidiary/',
           \ 'template_default': 'default',
@@ -157,16 +169,8 @@ let g:vimwiki_ext2syntax = {'.md': 'markdown',
           \ '.mkd': 'markdown',
           \ '.wiki': 'media'}
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" Markdown 语法的设置
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
-"Markdown 禁止文本中转换
-set conceallevel=2
-let g:tex_conceal = ""
-let g:vim_markdown_conceal = 0
-
+" VimWiki的markdown语法设置有问题, 上面全部设置为default, 当前语句进行设置
+au BufEnter *.md setlocal syntax=markdown
 
 
 " fzf 配置
@@ -457,7 +461,6 @@ let g:vim_markdown_no_default_key_mappings = 1
 let g:vim_markdown_math                    = 1
 let g:vim_markdown_frontmatter             = 1
 
-
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 
@@ -474,9 +477,10 @@ let g:UltiSnipsExpandTrigger='<c-j>'
 let g:UltiSnipsListSnippets='<c-tab>'
 let g:UltiSnipsJumpForwardTrigger="<c-b>"
 let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+    " \$HOME.'/.vim/plugged/vim-snippets',
 let g:UltiSnipsSnippetDirectories=[
     \$HOME.'/.vim/plugged/vim-snippets/UltiSnips',
-    \$HOME.'/.vim/plugged/vim-snippets',
     \$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
 
@@ -528,6 +532,11 @@ endfunction
 if &diff
     highlight! link DiffText MatchParen
 endif
+
+" 折叠颜色设置
+hi Folded ctermbg=7
+hi Folded ctermbg=242
+hi! link Folded SignColumn
 
 " Doxygen 注释
 "let g:DoxygenToolkit_briefTag_pre="@Synopsis  "
