@@ -161,16 +161,17 @@ let g:vimwiki_list = [{
           \ 'template_default': 'default',
           \ 'syntax': 'markdown',
           \ 'ext': '.md',
-          \ 'path_html': '~/vimwiki/site_html/', 
+          \ 'path_html': '~/vimwiki/site_html/',
           \ 'custom_wiki2html': 'vimwiki_markdown',
           \ 'template_ext': '.tpl'}]
 
 let g:vimwiki_ext2syntax = {'.md': 'markdown',
-          \ '.mkd': 'markdown',
-          \ '.wiki': 'media'}
+            \ '.mkd': 'markdown',
+            \ '.wiki': 'media'}
+
 
 " VimWiki的markdown语法设置有问题, 上面全部设置为default, 当前语句进行设置
-au BufEnter *.md setlocal syntax=markdown
+" au BufEnter *.md setlocal syntax=markdown
 
 
 " fzf 配置
@@ -468,7 +469,8 @@ let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist={'unite': 1}
 let g:ycm_min_num_of_chars_for_completion = 1
-nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
+nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
 
 " {{{ UltiSnips setup
 " 使用c-b 可以由$1跳转至$2
