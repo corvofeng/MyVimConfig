@@ -20,7 +20,7 @@ set fileformats=unix,dos
 
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
-" 这是Evernote 不是印象笔记, 已经不在使用
+" 这是Evernote 不是印象笔记, 已经不再使用
 " let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
 " let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
 
@@ -57,12 +57,13 @@ set number      " 显示行号
 
 " set scrolloff=15 " 顶部始终有15行, 保持光标在中间
 
-let g:session_autosave = 'yes'
-let g:session_autoload = 'yes'
+" let g:session_autosave = 'yes'
+" let g:session_autoload = 'yes'
 
-let g:solarized_termcolors = 256
-let g:solarized_contrast   = "high"
-let g:solarized_diffmode   = "low"
+" let g:solarized_termcolors = 256
+" let g:solarized_contrast   = "high"
+" let g:solarized_diffmode   = "low"
+" let g:solarized_hitrail   = 1
 
 " colorscheme solarized
 " set background=light
@@ -72,15 +73,14 @@ set cc=78               " 80字符对齐线
 " 设置jedi为python3
 let g:jedi#force_py_version=3
 
-"let g:solarized_hitrail   = 1
 
 set showmatch             " 括号配对
 set linebreak             " 整词换行
 set whichwrap=b,s,<,>,[,] " 设置整词换行
 set nocompatible          " 删除vi一致性
 
-set matchtime=1 " 匹配括号高亮
 "set mouse=a     " 允许鼠标
+set matchtime=1 " 匹配括号高亮
 set clipboard+=unnamed
 
 set hlsearch                    "高亮搜索
@@ -192,7 +192,6 @@ let g:miniBufExplModSelTarget = 1
 
 "保存文件
 nmap <c-s> :w<CR>
-
 " }}}
 
 " 自定义函数 {{{
@@ -427,8 +426,6 @@ nmap <C-\>f :cs  find f <C-R>=expand("<cword>") <CR><CR>
 nmap <C-\>i :cs  find i <C-R>=expand("<cword>") <CR><CR>
 nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
 
-
-
 " }}}
 
 
@@ -453,8 +450,8 @@ nmap <C-\>d :cs  find d <C-R>=expand("<cword>") <CR><CR>
 " let g:syntastic_cpp_compiler = 'clang++'
 " let g:syntastic_cpp_compiler_options = ' -std=c++11 -stdlib=libc++'
 
-map <C-F4> :mksession! ~/vim_session <cr> " Quick write session with F2
-map <C-F3> :source ~/vim_session <cr>     " And load session with F3
+" map <C-F4> :mksession! ~/vim_session <cr> " Quick write session with F2
+" map <C-F3> :source ~/vim_session <cr>     " And load session with F3
 
 "markdown
 let g:vim_markdown_folding_disabled        = 1 " 阻止Markdown折叠
@@ -473,6 +470,7 @@ let g:ycm_min_num_of_chars_for_completion = 1
 nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
 
 " {{{ UltiSnips setup
+" 使用c-j 进行补全
 " 使用c-b 可以由$1跳转至$2
 " 使用c-z 可以由$2跳回$1
 let g:UltiSnipsExpandTrigger='<c-j>'
@@ -486,7 +484,7 @@ let g:UltiSnipsSnippetDirectories=[
     \$HOME.'/.vim/UltiSnips']
 let g:UltiSnipsEditSplit="vertical"
 
-" 标准snip变量
+" 标准snip变量, 使用时不建议直接修改这里, 建议放在~/.vim/my.vim中进行
 let g:snips_author="corvo"
 let g:snips_projectname="default"
 let g:ultisnips_python_style="google"       " python注释风格
@@ -563,3 +561,7 @@ let g:ycm_semantic_triggers =  {
   \   'erlang' : [':'],
   \ }
 
+" 如果存在我自己的vim配置, 则进行加载
+if glob('~/.vim/my.vim') != ""
+    source ~/.vim/my.vim
+endif

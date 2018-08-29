@@ -16,7 +16,7 @@ Plug 'alx741/vinfo'
 Plug 'mhinz/vim-startify'
 "Plug 'yegappan/mru'
 
-Plug 'xolox/vim-session'
+" Plug 'xolox/vim-session'
 Plug 'vim-scripts/vim-misc'
 
 "For QQ
