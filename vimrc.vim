@@ -18,6 +18,9 @@ set foldlevel=1
 " 自动识别UNIX格式和MS-DOS格式
 set fileformats=unix,dos
 
+" 设置<Leader>键为',' 也可以设置为';'或是'/'
+let mapleader=','
+
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
 " 这是Evernote 不是印象笔记, 已经不再使用
@@ -73,7 +76,6 @@ set cc=78               " 80字符对齐线
 " 设置jedi为python3
 let g:jedi#force_py_version=3
 
-
 set showmatch             " 括号配对
 set linebreak             " 整词换行
 set whichwrap=b,s,<,>,[,] " 设置整词换行
@@ -114,10 +116,10 @@ autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 autocmd FileType c set omnifunc=ccomplete#Complete
 autocmd FileType go set nolist "omnifunc=gocomplete#Complete nolist
 
-"let g:vjde_completion_key='<c-space>'
-au Filetype c,cpp setl sw=4 sts=4 ts=4 et       "C, C++: 缩进8个字符
-au Filetype json setl sw=2 sts=2 ts=2 et       "JSON: 缩进8个字符
-au Filetype asm setl sw=8 sts=8 ts=8 et       "汇编代码
+" let g:vjde_completion_key='<c-space>'
+au Filetype c,cpp setl sw=4 sts=4 ts=4 et " C, C++: 缩进8个字符
+au Filetype json setl sw=2 sts=2 ts=2 et  " JSON: 缩进8个字符
+au Filetype asm setl sw=8 sts=8 ts=8 et   " 汇编代码
 
 "au FileType java setl omnifunc=javacomplete#Complete sw=4 sts=4 et
 "autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS
@@ -139,6 +141,25 @@ if has("autocmd")
     autocmd FileType python set complete+=k/home/corvo/.vim/pydiction iskeyword+=.,(
 endif " has("autocmd")
 
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
+" Save in  ls ~/Dropbox/Diary/vimwikidiary
+" 有些配置需要在vimwiki之后进行设置, 请将其提前
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:vimwiki_list = [{
+          \ 'path': '~/Dropbox/Diary/',
+          \ 'template_path': '~/vimwiki/templates/',
+          \ 'diary_rel_path': 'vimwikidiary/',
+          \ 'template_default': 'default',
+          \ 'syntax': 'default',
+          \ 'ext': '.md',
+          \ 'path_html': '~/vimwiki/site_html/',
+          \ 'custom_wiki2html': 'vimwiki_markdown',
+          \ 'template_ext': '.tpl'}]
+
+let g:vimwiki_ext2syntax = {'.md': 'markdown',
+            \ '.mkd': 'markdown',
+            \ '.wiki': 'media'}
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown 语法的设置
@@ -149,30 +170,9 @@ set conceallevel=2
 let g:tex_conceal = ""
 let g:vim_markdown_conceal = 0
 
-
-""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
-" Save in  ls ~/Dropbox/Diary/vimwikidiary
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-let g:vimwiki_list = [{
-          \ 'path': '~/Dropbox/Diary/',
-          \ 'template_path': '~/vimwiki/templates/',
-          \ 'diary_rel_path': 'vimwikidiary/',
-          \ 'template_default': 'default',
-          \ 'syntax': 'markdown',
-          \ 'ext': '.md',
-          \ 'path_html': '~/vimwiki/site_html/',
-          \ 'custom_wiki2html': 'vimwiki_markdown',
-          \ 'template_ext': '.tpl'}]
-
-let g:vimwiki_ext2syntax = {'.md': 'markdown',
-            \ '.mkd': 'markdown',
-            \ '.wiki': 'media'}
-
-
-" VimWiki的markdown语法设置有问题, 上面全部设置为default, 当前语句进行设置
-" au BufEnter *.md setlocal syntax=markdown
-
+" IndentLine插件会查看g:indentLine_conceallevel这一项来决定conceallevel
+" 我这里直接进行了修改
+autocmd FileType vimwiki,markdown let g:indentLine_conceallevel=0
 
 " fzf 配置
 let g:fzf_action = {
@@ -201,15 +201,15 @@ map<F2> : noh <CR>
 
 "目录树
 map <F3> :NERDTreeToggle <CR>
-imap <F3> <ESC>: NERDTreeToggle <CR>
+imap <F3> <ESC>:NERDTreeToggle <CR>
 
 "QT
 map <F4>:call ComplieQt() <CR>
 func! ComplieQt()
-        exec "w"
-        exec "!qmake-qt4 -project"
-        exec "!qmake-qt4"
-        exec "make"
+    exec "w"
+    exec "!qmake-qt4 -project"
+    exec "!qmake-qt4"
+    exec "make"
 endfunc
 
 let g:make = 'gmake'
@@ -219,6 +219,9 @@ endif
 
 " Ctags的设定
 map <C-F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
+
+" 设置Python文件tag显示
+let tlist_python_settings = 'python;c:class;f:function;m:class_method;v:variables'                     
 
 let Tlist_Auto_Highlight_Tag   = 1
 let Tlist_Auto_Update          = 1
@@ -230,9 +233,11 @@ let Tlist_Show_One_File        = 1
 let Tlist_Use_Right_Window     = 1
 let Tlist_Use_SingleClick      = 1
 let Tlist_Ctags_Cmd            = '/usr/bin/ctags'
+
 nnoremap <silent> <F8> :TlistToggle <CR>
 
-"打开所在文件夹
+
+"打开所在文件夹或是终端
 map <F11> : silent exec "!nemo ." <CR>
 map <S-F11> : silent exec "!gnome-terminal ." <CR>
 
@@ -467,7 +472,7 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_filetype_blacklist={'unite': 1}
 let g:ycm_min_num_of_chars_for_completion = 1
 " nnoremap <leader>jd :YcmCompleter GoToDefinitionElseDeclaration<CR>
-nnoremap <leader>g :YcmCompleter GoToDefinition<CR>
+map <leader>g :YcmCompleter GoToDefinition<CR>
 
 " {{{ UltiSnips setup
 " 使用c-j 进行补全
@@ -506,7 +511,6 @@ autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=red   ctermbg=3
 autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=green ctermbg=4
 
 "{{{ For Tablur
-let mapleader=','
 if exists(":Tabularize")
 nmap <Leader>a= :Tabularize /=<CR>
 vmap <Leader>a= :Tabularize /=<CR>
@@ -565,3 +569,19 @@ let g:ycm_semantic_triggers =  {
 if glob('~/.vim/my.vim') != ""
     source ~/.vim/my.vim
 endif
+
+" Used by winmanager {{{
+
+let g:NERDTree_title = ""
+let g:winManagerWindowLayout='NERDTree|TagList' "BufExplorer'
+
+function! NERDTree_Start() 
+    " exe 'NERDTree'
+	exe 'q'
+	exec 'NERDTreeToggle'
+endfunction 
+
+function! NERDTree_IsValid() 
+	return 1 
+endfunction
+" }}}

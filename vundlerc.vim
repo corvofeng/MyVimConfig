@@ -10,6 +10,9 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 Plug 'alx741/vinfo'
 
+" 插件有许多问题, 想要用起来实在不容易
+" Plug 'vim-scripts/winmanager'
+
 " Plug 'pathogen.vim'
 
 " Vim开机画面
@@ -53,7 +56,6 @@ Plug 'skywind3000/asyncrun.vim'
 
 " For Markdown
 Plug 'plasticboy/vim-markdown'
-" Plug 'plasticboy/vim-markdown'
 " Plug 'Markdown'
 " Plug 'Markdown-syntax'
 
@@ -101,6 +103,7 @@ Plug 'vim-scripts/vimlatex'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
+
 " For Java
 " Plug 'vim-scripts/javacomplete'
 " Plug 'vim-scripts/java_fold'
@@ -125,11 +128,11 @@ Plug 'vim-scripts/AutoClose'
 " Plug 'vim-scripts/minibufexpl.vim'
 
 " Some themes
-Plug 'altercation/vim-colors-solarized'
 Plug 'crusoexia/vim-monokai'
 Plug 'jaromero/vim-monokai-refined'
-Plug 'rakr/vim-one'
 Plug 'iCyMind/NeoSolarized'
+Plug 'altercation/vim-colors-solarized'
+Plug 'rakr/vim-one'
 
 Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
 Plug 'Yggdroot/indentLine'
@@ -145,7 +148,6 @@ Plug 'w0rp/ale' ", {'on':[]}
 " For Spell
 " Plug 'vim-scripts/SpellCheck'
 
-Plug 'iCyMind/NeoSolarized'
 call plug#end()
 
 
