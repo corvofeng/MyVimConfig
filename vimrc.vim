@@ -155,6 +155,7 @@ let g:vimwiki_list = [{
           \ 'ext': '.md',
           \ 'path_html': '~/vimwiki/site_html/',
           \ 'custom_wiki2html': 'vimwiki_markdown',
+		  \ 'auto_toc': 1,
           \ 'template_ext': '.tpl'}]
 
 " Vimwiki使得所有的Markdown文件全部变成了vimwiki, 这里进行设置
