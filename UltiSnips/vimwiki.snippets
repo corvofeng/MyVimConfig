@@ -16,6 +16,12 @@ while lastMonday.weekday() != calendar.MONDAY:
 # 周报的起止日期
 start_end = '{}-{}'.format(lastMonday.strftime('%Y.%m.%d'), lastFriday.strftime('%Y.%m.%d'))
 
+def get_week():
+    """ 返回当前年份, 以及当前是第几周 """
+    return datetime.datetime.now().isocalendar()
+
+week_num = '{}-{}'.format(get_week()[0], get_week()[1])
+
 # 周报部门, 所属组, 作者姓名
 author = 'xxx'
 endglobal
@@ -29,6 +35,8 @@ snippet title "我的日记标题" b
 = Contents =
 
 ----
+
+[[weekly/`!p snip.rv=week_num`|Current Weekly]]
 
 == 今日完成 ==
 
