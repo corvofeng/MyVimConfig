@@ -1,4 +1,5 @@
 
+
 global !p
 import datetime, calendar
 
@@ -17,9 +18,28 @@ start_end = '{}-{}'.format(lastMonday.strftime('%Y.%m.%d'), lastFriday.strftime(
 
 # 周报部门, 所属组, 作者姓名
 author = 'xxx'
-
-
 endglobal
+
+
+snippet title "我的日记标题" b
+= `!v strftime("%Y-%m-%d")` =
+
+:diary:
+
+= Contents =
+
+----
+
+== 今日完成 ==
+
+$1
+
+
+== 今日学习 ==
+
+$2
+
+endsnippet
 
 snippet zhoubao "周报模板" b
 ---
