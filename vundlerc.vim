@@ -55,8 +55,8 @@ Plug 'skywind3000/asyncrun.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 
 " For Markdown
-Plug 'plasticboy/vim-markdown'
-" Plug 'Markdown'
+" Plug 'plasticboy/vim-markdown'
+Plug 'vim-scripts/Markdown'
 " Plug 'Markdown-syntax'
 
 " Airline变得再好看也是airline, 放弃了

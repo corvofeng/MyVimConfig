@@ -157,16 +157,37 @@ let g:vimwiki_list = [{
           \ 'custom_wiki2html': 'vimwiki_markdown',
           \ 'template_ext': '.tpl'}]
 
+" Vimwiki使得所有的Markdown文件全部变成了vimwiki, 这里进行设置
+" https://github.com/vimwiki/vimwiki/issues/292
+let g:vimwiki_global_ext=0
+let g:vimwiki_conceallevel=0        " 禁止文本转换
+
 let g:vimwiki_ext2syntax = {'.md': 'markdown',
             \ '.mkd': 'markdown',
             \ '.wiki': 'media'}
+
+autocmd FileType vimwiki,markdown hi VimwikiHeader1 guifg=#FF0000
+autocmd FileType vimwiki,markdown hi VimwikiHeader2 guifg=#00FF00
+autocmd FileType vimwiki,markdown hi VimwikiHeader3 guifg=#0000FF
+autocmd FileType vimwiki,markdown hi VimwikiHeader4 guifg=#FF00FF
+autocmd FileType vimwiki,markdown hi VimwikiHeader5 guifg=#00FFFF
+autocmd FileType vimwiki,markdown hi VimwikiHeader6 guifg=#FFFF00
+" hi link VimwikiHeader1 pandocBlockQuoteLeader1
+" hi link VimwikiHeader2 pandocBlockQuoteLeader2
+" hi link VimwikiHeader2 guifg=#00FF00
+" hi link VimwikiHeader3 pandocBlockQuoteLeader3
+" hi link VimwikiHeader4 pandocBlockQuoteLeader4
+" hi link VimwikiHeader5 pandocBlockQuoteLeader5
+" hi link VimwikiHeader6 pandocBlockQuoteLeader6
+
+
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Markdown 语法的设置
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 "Markdown 禁止文本中转换
-set conceallevel=2
+set conceallevel=0
 let g:tex_conceal = ""
 let g:vim_markdown_conceal = 0
 
@@ -222,6 +243,7 @@ map <C-F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " 设置Python文件tag显示
 let tlist_python_settings = 'python;c:class;f:function;m:class_method;v:variables'                     
+let tlist_golang_settings = 'golang;f:func;v:var;t:type'                     
 
 let Tlist_Auto_Highlight_Tag   = 1
 let Tlist_Auto_Update          = 1

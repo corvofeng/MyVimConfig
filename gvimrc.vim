@@ -18,7 +18,7 @@ let g:livepreview_previewer = 'okular'
 " nmap <space> @=((foldclosed(line('.'))<0)?'zc':'zo')<CR>
 
 set foldenable
-set foldmethod=syntax
+" set foldmethod=syntax
 "set foldcolumn=2
 " highlight Folded  guibg=#0A0A0A guifg=#76fd3d
 " 折叠颜色设置
@@ -69,7 +69,7 @@ function! MarkdownFoldText()
 endfunction
 
 au BufEnter *.md setlocal foldexpr=MarkdownLevel()
-au BufEnter *.md setlocal foldmethod=expr
+au BufEnter *.md setlocal foldmethod=syntax
 au BufEnter *.md setlocal foldtext=MarkdownFoldText()
 
 autocmd FileType python set foldmethod=indent
@@ -109,7 +109,7 @@ let ale_c_build_dir='./build'
 
 " C0111: 函数必须有注释, 暂时进行屏蔽
 " C0326: 赋值号之前只能有一个空格, 我认为这样代码并不美观
-let g:ale_python_pylint_options = '--disable=C0111,R0903,C0301,C0326'
+let g:ale_python_pylint_options = '--disable=C0111'
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -172,8 +172,6 @@ let g:airline#extensions#tabline#left_sep = ' '
 let g:airline#extensions#tabline#left_alt_sep = '|'
 let g:airline#extensions#tabline#enabled = 1
 let g:airline#extensions#tabline#formatter = 'default'
-
-
 
 "set statusline+=%{fugitive#statusline()}
 "set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
