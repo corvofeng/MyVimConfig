@@ -34,8 +34,12 @@ Plug 'mattn/emmet-vim', {'for': 'html'}
 Plug 'fatih/vim-go', {'for': 'go'}
 Plug 'Blackrush/vim-gocode', {'for': 'go'}
 
-" About Complete 
+" About Complete
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
+" 我自己的编译方式
+" ./install.py --clang-completer --go-completer \
+" --system-boost --system-libclang --clang-tidy \
+"  --build-dir ~/Project/build-YCM
 Plug 'Valloric/YouCompleteMe' ", {'on': []}
 
 " ToDo List Manager
