@@ -1,5 +1,3 @@
-
-
 global !p
 import datetime, calendar
 
@@ -26,8 +24,34 @@ week_num = '{}-{}'.format(get_week()[0], get_week()[1])
 author = 'xxx'
 endglobal
 
+snippet title "我的日记标题(Markdown)" b
+---
+title: `!v strftime("%Y-%m-%d")`
+date: `!v strftime("%Y-%m-%d")`
+author: `!v g:snips_author`
+tags: diary
 
-snippet title "我的日记标题" b
+---
+
+
+[Current Weekly](weekly/`!p snip.rv=week_num`)
+
+----
+
+## 今日完成
+
+$1
+
+## 今日学习
+
+$2
+
+
+endsnippet
+
+
+
+snippet title_wiki "我的日记标题(Wiki版)" b
 = `!v strftime("%Y-%m-%d")` =
 
 :diary:
@@ -57,12 +81,13 @@ endsnippet
 
 snippet zhoubao "周报模板" b
 ---
-layout: post
-title: [周报]`!v g:snip_zhoubao_sector` `!v g:snip_zhoubao_group`-`!v g:snip_zhoubao_author` (`!p snip.rv= start_end`)
+title: `!v strftime("%Y-%m-%d")`[周报]
 date: `!p snip.rv= start_end`
 author: `!v g:snips_author`
 
 ---
+
+[周报]`!v g:snip_zhoubao_sector` `!v g:snip_zhoubao_group`-`!v g:snip_zhoubao_author` (`!p snip.rv= start_end`)
 
 
 师傅, 主管:

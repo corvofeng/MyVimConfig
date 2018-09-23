@@ -145,18 +145,21 @@ endif " has("autocmd")
 " VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
 " Save in  ls ~/Dropbox/Diary/vimwikidiary
 " 有些配置需要在vimwiki之后进行设置, 请将其提前
+" \ 'custom_wiki2html': 'vimwiki_markdown',
+" \ 'custom_wiki2html': '~/.vim/misaka_md2html.py',
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{
           \ 'path': '~/Dropbox/Diary/',
-          \ 'template_path': '~/vimwiki/templates/',
           \ 'diary_rel_path': 'vimwikidiary/',
-          \ 'template_default': 'default',
-          \ 'syntax': 'default',
+          \ 'syntax': 'markdown',
           \ 'ext': '.md',
           \ 'path_html': '~/vimwiki/site_html/',
-          \ 'custom_wiki2html': 'vimwiki_markdown',
-		  \ 'auto_toc': 1,
-          \ 'template_ext': '.tpl'}]
+          \ 'auto_toc': 1,
+          \ 'template_path': '~/vimwiki/site_html/vimwiki-assets/',
+          \ 'custom_wiki2html': '~/.vim/wiki/wiki2html.sh',
+          \ 'template_default': 'default',
+          \ 'template_ext': '.html',
+          \ }]
 
 " Vimwiki使得所有的Markdown文件全部变成了vimwiki, 这里进行设置
 " https://github.com/vimwiki/vimwiki/issues/292
@@ -489,6 +492,10 @@ let g:vim_markdown_frontmatter             = 1
 
 "YouCompleteMe
 let g:ycm_global_ycm_extra_conf = '~/.vim/ycm_extra_conf.py'
+"let g:ycm_server_python_interpreter='/usr/bin/python3'
+let g:ycm_python_binary_path = '/usr/bin/python3'
+
+
 
 " YouCompleteMe setup
 let g:ycm_autoclose_preview_window_after_completion = 1
