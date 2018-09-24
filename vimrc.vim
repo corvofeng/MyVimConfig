@@ -147,18 +147,23 @@ endif " has("autocmd")
 " 有些配置需要在vimwiki之后进行设置, 请将其提前
 " \ 'custom_wiki2html': 'vimwiki_markdown',
 " \ 'custom_wiki2html': '~/.vim/misaka_md2html.py',
+" \ 'template_path': '~/vimwiki/site_html/vimwiki-assets/',
+" \ 'template_default': 'default',
+" \ 'template_ext': '.html',
+" \ 'custom_wiki2html_args': 'stuff',
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{
           \ 'path': '~/Dropbox/Diary/',
+          \ 'template_path': '~/Dropbox/Diary/assets',
+          \ 'template_default': 'default',
+          \ 'template_ext': '.html',
           \ 'diary_rel_path': 'vimwikidiary/',
           \ 'syntax': 'markdown',
           \ 'ext': '.md',
           \ 'path_html': '~/vimwiki/site_html/',
           \ 'auto_toc': 1,
-          \ 'template_path': '~/vimwiki/site_html/vimwiki-assets/',
           \ 'custom_wiki2html': '~/.vim/wiki/wiki2html.sh',
-          \ 'template_default': 'default',
-          \ 'template_ext': '.html',
+          \ 'css_name': 'github-pandoc.css',
           \ }]
 
 " Vimwiki使得所有的Markdown文件全部变成了vimwiki, 这里进行设置
