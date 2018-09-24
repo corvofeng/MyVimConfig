@@ -95,8 +95,8 @@ set showcmd
 "设置命令行高度为1
 set cmdheight=1
 
-"粘贴时保持格式
-set paste
+" 粘贴时保持格式
+" set paste
 
 set regexpengine=1
 
