@@ -14,25 +14,45 @@ set cindent     "设置c自动缩进
 set smartindent
 set autoindent
 
+" vertical line indentation
+let g:indentLine_color_term = 239
+let g:indentLine_color_gui = '#09AA08'
+let g:indentLine_char = '│'
+
+" Some ListChars won't use
+set list
+set listchars=tab:▸-,trail:·,extends:>,precedes:<
+"set listchars=tab:»·,trail:·
+"set listchars=tab:┊\
+"set listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
+hi NonText ctermfg=7 guifg=gray
+
+
+set statusline=
+set statusline+=%<\                       " cut at start
+set statusline+=%2*[%n%H%M%R%W]%*\        " flags and buf no
+set statusline+=%-40f\                    " path
+set statusline+=%=%1*%y%*%*\              " file type
+set statusline+=%10((%l,%c)%)\            " line and column
+set statusline+=%P                        " percentage of file
+set laststatus=2
+
 set foldlevel=1
 " 自动识别UNIX格式和MS-DOS格式
 set fileformats=unix,dos
+
+set backspace=indent,eol,start  " more powerful backspacing
 
 " 设置<Leader>键为',' 也可以设置为';'或是'/'
 let mapleader=','
 
 let g:tex_conceal = "" "latex关键字不进行自动隐藏
 
-" 这是Evernote 不是印象笔记, 已经不再使用
-" let g:evervim_nutstore='https://www.evernote.com/shard/s601/notestore'
-" let g:evervim_devtoken='S=s601:U=679e590:E=162d689dfcb:C=15b7ed8b0f0:P=1cd:A=en-devtoken:V=2:H=a2b5f0303de8aacebdd2de76f70b169f'
-
-
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Vimux 配置文件
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:VimuxUseNearest=1
-let g:VimuxRunnerInde="vim_attach:1.1"
+let g:VimuxRunnerIndex="vim_attach:1.1"
 
 " 添加对于Tmux的支持
 function! VimuxSlime()
@@ -95,7 +115,7 @@ set showcmd
 "设置命令行高度为1
 set cmdheight=1
 
-" 粘贴时保持格式
+"粘贴时保持格式, 但是这样Ultisnip就不可以用了
 " set paste
 
 set regexpengine=1
@@ -442,15 +462,15 @@ endfunction
 """
 """Add any cscope database in current directory
 if filereadable("cscope.out")
-	set noautochdir
-	cs add cscope.out
+    set noautochdir
+    cs add cscope.out
 """ else add the database pointed to by environment variable
 elseif $CSCOPE_DB != ""
     cs add $CSCOPE_DB
 endif
 
 function! ReadCSCOPE()
-	set noautochdir
+    set noautochdir
 endfunction
 
 nmap <C-\>s :cs  find s <C-R>=expand("<cword>") <CR><CR>
@@ -513,10 +533,10 @@ map <leader>g :YcmCompleter GoToDefinition<CR>
 " 使用c-j 进行补全
 " 使用c-b 可以由$1跳转至$2
 " 使用c-z 可以由$2跳回$1
-let g:UltiSnipsExpandTrigger='<c-j>'
-let g:UltiSnipsListSnippets='<c-tab>'
-let g:UltiSnipsJumpForwardTrigger="<c-b>"
-let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+let g:UltiSnipsExpandTrigger='<C-j>'
+let g:UltiSnipsListSnippets='<C-tab>'
+let g:UltiSnipsJumpForwardTrigger="<C-b>"
+let g:UltiSnipsJumpBackwardTrigger="<C-z>"
 
     " \$HOME.'/.vim/plugged/vim-snippets',
 let g:UltiSnipsSnippetDirectories=[
