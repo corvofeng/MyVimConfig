@@ -156,7 +156,7 @@ call plug#end()
 
 
 " FOR BUNDLE
-call vundle#rc()              " 必须设置在前
+" call vundle#rc()              " 必须设置在前
 
 " 语法检查插件
 " Bundle 'Syntastic'
