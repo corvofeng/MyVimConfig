@@ -56,7 +56,7 @@ set softtabstop=4
 set expandtab
 
 set number      " 显示行号
-" set relativenumber " 相对行号设置
+set relativenumber " 相对行号设置
 
 " set scrolloff=15 " 顶部始终有15行, 保持光标在中间
 
