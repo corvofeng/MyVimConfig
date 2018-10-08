@@ -29,9 +29,6 @@ hi! link Folded SignColumn
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
 let g:tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
-
-
-
 " 全屏
 function! ToggleFullScreen()
     call system("wmctrl -r :ACTIVE: -b toggle,fullscreen")
@@ -60,7 +57,7 @@ function! MarkdownLevel()
     if curline =~ '^###### .*$'
         return ">6"
     endif
-    return "=" 
+    return "="
 endfunction
 
 function! MarkdownFoldText()
@@ -88,6 +85,7 @@ let g:ale_linters = {
             \'cpp': ['clangtidy','cpplint'],
             \'python': ['pylint']
             \}
+let g:ale_fixers = {'python': ['autopep8']}
 let g:ale_cpp_gcc = 1
 let ale_cpp_clang_options = '
     \ -std=c++14 -Wall
@@ -114,23 +112,6 @@ let g:ale_python_pylint_options = '--disable=C0111'
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
 
-" Enable ShowMarks 标记将会被显示出来
-let showmarks_enable = 1
-
-" Some ListChars won't use
-set list 
-set listchars=tab:▸-,trail:·,extends:>,precedes:<
-hi NonText ctermfg=7 guifg=gray
-
-"set listchars=tab:»·,trail:·
-"set listchars=tab:┊\ 
-"set listchars=tab:❘-,trail:·,extends:»,precedes:«,nbsp:×
-
-" vertical line indentation
-let g:indentLine_color_term = 239
-let g:indentLine_color_gui = '#09AA08'
-let g:indentLine_char = '│'
-
 " gvim 添加语法检查, 曾经使用syntastic, 现已使用ALE
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}
@@ -148,7 +129,6 @@ let g:indentLine_char = '│'
 " 添加对python的语法检查
 " let g:syntastic_python_checkers=['pylint']
 " let g:syntastic_python_pylint_args='--disable=C0111,R0903,C0301'
-
 
 " convert spaces to tabs when reading file
 " autocmd! bufreadpost * set noexpandtab | retab! 4
@@ -204,6 +184,3 @@ set guioptions-=R
 " 禁止显示菜单和工具条
 set guioptions-=m
 set guioptions-=T
-
-" 总是显示状态栏
-set laststatus=2

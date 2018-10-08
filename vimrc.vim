@@ -186,6 +186,10 @@ let g:vimwiki_list = [{
           \ 'css_name': 'github-pandoc.css',
           \ }]
 
+" 在Google clendar 中可以直接跳转到本日的日记
+autocmd FileType calendar nmap <buffer> <CR> :<C-u>call vimwiki#diary#calendar_action(b:calendar.day().get_day(), b:calendar.day().get_month(), b:calendar.day().get_year(), b:calendar.day().week(), "V")<CR>
+
+
 " Vimwiki使得所有的Markdown文件全部变成了vimwiki, 这里进行设置
 " https://github.com/vimwiki/vimwiki/issues/292
 let g:vimwiki_global_ext=0
@@ -624,6 +628,10 @@ let g:ycm_semantic_triggers =  {
 if glob('~/.vim/my.vim') != ""
     source ~/.vim/my.vim
 endif
+
+" Calendar-Vim
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
 
 " Used by winmanager {{{
 
