@@ -161,7 +161,7 @@ install_vim () {
     else
       mv "$HOME/.vim" "$HOME/.vim_back"
       success "BackUp $HOME/.vim to $HOME/.vim_back"
-      ln -s "$HOME/.CoolVim " "$HOME/.vim"
+      ln -s "$HOME/.CoolVim" "$HOME/.vim"
       success "Installed CoolVim for vim"
     fi
   else
