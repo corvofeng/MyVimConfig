@@ -181,13 +181,13 @@ install_vim () {
 # }
 # }}}
 
-create_symbol {{{
+# create_symbol {{{
 create_symbol () {
     ln -s ~/.vim/vimrc.vim ~/.vimrc
     ln -s ~/.vim/gvimrc.vim ~/.gvimrc
     ln -s ~/.vim/vrapperrc ~/.vrapperrc
 }
-}}}
+# }}}
 
 # install_neovim {{{
 # install_neovim () {
