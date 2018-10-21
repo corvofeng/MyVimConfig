@@ -330,27 +330,29 @@ install_done () {
 # welcome {{{
 
 
-welcome () {
-    echo_with_color ${Yellow} "        /######                                     /##    /##/##             "
-    echo_with_color ${Yellow} "       /##__  ##                                   | ##   | #|__/             "
-    echo_with_color ${Yellow} "      | ##  \__/ /######  /######  /####### /######| ##   | ##/##/######/#### "
-    echo_with_color ${Yellow} "      |  ###### /##__  ##|____  ##/##_____//##__  #|  ## / ##| #| ##_  ##_  ##"
-    echo_with_color ${Yellow} "       \____  #| ##  \ ## /######| ##     | ########\  ## ##/| #| ## \ ## \ ##"
-    echo_with_color ${Yellow} "       /##  \ #| ##  | ##/##__  #| ##     | ##_____/ \  ###/ | #| ## | ## | ##"
-    echo_with_color ${Yellow} "      |  ######| #######|  ######|  ######|  #######  \  #/  | #| ## | ## | ##"
-    echo_with_color ${Yellow} "       \______/| ##____/ \_______/\_______/\_______/   \_/   |__|__/ |__/ |__/"
-    echo_with_color ${Yellow} "               | ##                                                           "
-    echo_with_color ${Yellow} "               | ##                                                           "
-    echo_with_color ${Yellow} "               |__/                                                           "
-    echo_with_color ${Yellow} "                      version : 1.0.0-dev       by : spacevim.org             "
-}
 
+
+
+
+
+
+welcome () {
+    echo_with_color ${Yellow} "            ██████╗ ██████╗  ██████╗ ██╗    ██╗   ██╗██╗███╗   ███╗ "
+    echo_with_color ${Yellow} "           ██╔════╝██╔═══██╗██╔═══██╗██║    ██║   ██║██║████╗ ████║ "
+    echo_with_color ${Yellow} "           ██║     ██║   ██║██║   ██║██║    ██║   ██║██║██╔████╔██║ "
+    echo_with_color ${Yellow} "           ██║     ██║   ██║██║   ██║██║    ╚██╗ ██╔╝██║██║╚██╔╝██║ "
+    echo_with_color ${Yellow} "           ╚██████╗╚██████╔╝╚██████╔╝███████╗╚████╔╝ ██║██║ ╚═╝ ██║ "
+    echo_with_color ${Yellow} "            ╚═════╝ ╚═════╝  ╚═════╝ ╚══════╝ ╚═══╝  ╚═╝╚═╝     ╚═╝ "
+    echo_with_color ${Yellow} "                                                                    "
+    echo_with_color ${Yellow} "                      version : 1.0.0-dev       by : corvo.myseu.cn "
+
+}
 # }}}
 
 # download_font {{{
 download_font () {
-  url="https://raw.githubusercontent.com/wsdjeg/DotFiles/master/local/share/fonts/$1"
-  path="$HOME/.local/share/fonts/$1"
+   url="https://raw.githubusercontent.com/wsdjeg/DotFiles/master/local/share/fonts/$1"
+   path="$HOME/.local/share/fonts/$1"
   if [[ -f "$path" ]]
   then
     success "Downloaded $1"
@@ -394,7 +396,6 @@ install_fonts () {
   fi
   success "font cache done!"
 }
-
 # }}}
 
 ### main {{{
