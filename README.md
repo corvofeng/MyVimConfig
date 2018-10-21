@@ -25,9 +25,23 @@
 
 ## usage
 
+
+1. 安装
+
+最近模仿`SpaceVim`的安装脚本, 自己也写了一个哈:
+
+```bash
+curl https://goo.gl/2DHtv5 | bash -
+# 或者
+curl https://raw.githubusercontent.com/corvofeng/MyVimConfig/master/install.sh | bash -
+
+# 再次执行下面的命令即可
+./.vim/install.sh
+```
+
 建议将特定文件软链接到家目录, 这样修改一个文件的同时会进行同步
 
-1. 首先添加`.vimrc`等文件
+<!-- 1. 首先添加`.vimrc`等文件
 
 ```bash
 git clone https://github.com/corvofeng/MyVimConfig.git ~/.vim
@@ -35,7 +49,7 @@ ln -s ~/.vim/vimrc.vim ~/.vimrc
 ln -s ~/.vim/gvimrc.vim ~/.gvimrc
 ln -s ~/.vim/vrapperrc ~/.vrapperrc
 ```
-
+ -->
 2. 安装插件
 ```bash
 vim +BundleInstall +PlugInstall
