@@ -7,9 +7,9 @@
 set guifont=Fira\ Code\ Medium\ 11
 " let g:Powerline_colorscheme='solarized256'
 " colorscheme monokai
-colorscheme solarized
-colorscheme NeoSolarized
-" colorscheme one
+" colorscheme solarized
+" colorscheme NeoSolarized
+colorscheme one
 " colorscheme monokai
 
 let g:livepreview_previewer = 'okular'

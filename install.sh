@@ -156,18 +156,19 @@ install_vim () {
   fi
 
   if [[ -d "$HOME/.vim" ]]; then
-    if [[ "$(readlink $HOME/.vim)" =~ \.CoolVim$ ]]; then
-      success "Installed CoolVim for vim"
-    else
+    if [[ ! "$(readlink $HOME/.vim)" =~ \.CoolVim$ ]]; then
       mv "$HOME/.vim" "$HOME/.vim_back"
       success "BackUp $HOME/.vim to $HOME/.vim_back"
       ln -s "$HOME/.CoolVim" "$HOME/.vim"
-      success "Installed CoolVim for vim"
     fi
   else
     ln -s "$HOME/.CoolVim" "$HOME/.vim"
-    success "Installed CoolVim for vim"
   fi
+
+  if [ ! -f $HOME/.vim/vundlerc.vim ]; then
+    cp $HOME/.vim/vundlerc.vim.tpl $HOME/.vim/vundlerc.vim
+  fi
+  success "Installed CoolVim for vim"
 }
 # }}}
 
@@ -284,7 +285,7 @@ check_requirements () {
 usage () {
   echo "CoolVim install script : V ${Version}"
   echo ""
-  echo "Usage : curl -sLf https://spacevim.org/install.sh | bash -s -- [option] [target]"
+  echo "Usage : curl -sLf https://goo.gl/2DHtv5 | bash -s -- [option] [target]"
   echo ""
   echo "  This is bootstrap script for CoolVim."
   echo ""
@@ -297,18 +298,18 @@ usage () {
   echo ""
   echo "EXAMPLE"
   echo ""
-  echo "    Install SpaceVim for vim and neovim"
+  echo "    Install CoolVim for vim"
   echo ""
   echo "        curl -sLf https://spacevim.org/install.sh | bash"
   echo ""
-  echo "    Install SpaceVim for vim only or neovim only"
+  echo "    Install CoolVim for vim only or neovim only"
   echo ""
-  echo "        curl -sLf https://spacevim.org/install.sh | bash -s -- --install vim"
+  echo "        curl -sLf https://goo.gl/2DHtv5 | bash -s -- --install vim"
   echo "        curl -sLf https://spacevim.org/install.sh | bash -s -- --install neovim"
   echo ""
-  echo "    Uninstall SpaceVim"
+  echo "    Uninstall CoolVim"
   echo ""
-  echo "        curl -sLf https://spacevim.org/install.sh | bash -s -- --uninstall"
+  echo "        curl -sLf https://goo.gl/2DHtv5 | bash -s -- --uninstall"
 }
 # }}}
 
@@ -328,14 +329,6 @@ install_done () {
 # }}}
 
 # welcome {{{
-
-
-
-
-
-
-
-
 welcome () {
     echo_with_color ${Yellow} "            ██████╗ ██████╗  ██████╗ ██╗    ██╗   ██╗██╗███╗   ███╗ "
     echo_with_color ${Yellow} "           ██╔════╝██╔═══██╗██╔═══██╗██║    ██║   ██║██║████╗ ████║ "

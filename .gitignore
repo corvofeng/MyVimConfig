@@ -1,4 +1,5 @@
 # Vim
+vundlerc.vim
 my.vim
 .netrwhist
 sessions/

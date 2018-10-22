@@ -8,27 +8,30 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
-Plug 'alx741/vinfo'
+" Plug 'alx741/vinfo'
 
 " 插件有许多问题, 想要用起来实在不容易
 " Plug 'vim-scripts/winmanager'
 
 " Plug 'pathogen.vim'
+" Plug 'tpope/vim-fireplace'
 
 " Vim开机画面
 Plug 'mhinz/vim-startify'
-"Plug 'yegappan/mru'
+" Plug 'yegappan/mru'
 
 " Plug 'xolox/vim-session'
-Plug 'vim-scripts/vim-misc'
+" Plug 'vim-scripts/vim-misc'
+
+" Plug 'jaxbot/chrome-devtools.vim'
 
 "For QQ
 " Plug 'wsdjeg/vim-chat', {'on': []}
 
-Plug 'xuhdev/vim-latex-live-preview', {'on': []}
+" Plug 'xuhdev/vim-latex-live-preview', {'on': []}
 
 " For html
-Plug 'mattn/emmet-vim', {'for': 'html'}
+" Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " For Go
 Plug 'fatih/vim-go', {'for': 'go'}
@@ -40,7 +43,7 @@ Plug 'Blackrush/vim-gocode', {'for': 'go'}
 " ./install.py --clang-completer --go-completer \
 " --system-boost --system-libclang --clang-tidy \
 "  --build-dir ~/Project/build-YCM
-Plug 'Valloric/YouCompleteMe' ", {'on': []}
+" Plug 'Valloric/YouCompleteMe' ", {'on': []}
 
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
@@ -60,7 +63,7 @@ Plug 'skywind3000/asyncrun.vim'
 
 " For Markdown
 " Plug 'plasticboy/vim-markdown'
-Plug 'vim-scripts/Markdown'
+" Plug 'vim-scripts/Markdown'
 " Plug 'Markdown-syntax'
 
 " Airline变得再好看也是airline, 放弃了
@@ -70,21 +73,21 @@ Plug 'vim-scripts/Markdown'
 
 " VimWiki
 " Plug 'vimwiki/vimwiki'
-Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
+" Plug 'vimwiki/vimwiki', { 'branch': 'dev' }
 
 " Work with tmux
 " Plug 'benmills/vimux'
 
 " For CMake
-Plug 'jalcine/cmake.vim', {'for': 'cmake'}
+" Plug 'jalcine/cmake.vim', {'for': 'cmake'}
 
 " 很好很强大, 快速产生写好的代码片段
-Plug 'MarcWeber/vim-addon-mw-utils'
-Plug 'tomtom/tlib_vim'
-Plug 'garbas/vim-snipmate'
-Plug 'SirVer/ultisnips'
+" Plug 'MarcWeber/vim-addon-mw-utils'
+" Plug 'tomtom/tlib_vim'
+" Plug 'garbas/vim-snipmate'
+" Plug 'SirVer/ultisnips'
 
-Plug 'honza/vim-snippets'
+" Plug 'honza/vim-snippets'
 " For Git
 " Plug 'tpope/vim-fugitive', {'on': []}
 
@@ -98,12 +101,12 @@ Plug 'vim-scripts/css_color.vim'
 Plug 'vim-scripts/vimdoc'
 Plug 'vim-scripts/cscope.vim'
 " Plug 'vim-scripts/ZenCoding.vim'
-Plug 'vim-scripts/JSON.vim', {'for': 'json'}
-Plug 'vim-scripts/vcscommand.vim'
+" Plug 'vim-scripts/JSON.vim', {'for': 'json'}
+" Plug 'vim-scripts/vcscommand.vim'
 " Plug 'Workspace-Manager'
 
 " For Latex
-Plug 'vim-scripts/vimlatex'
+" Plug 'vim-scripts/vimlatex'
 
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' }
 Plug 'junegunn/fzf.vim'
@@ -114,17 +117,17 @@ Plug 'junegunn/fzf.vim'
 " Plug 'vim-scripts/javaDoc.vim'
 
 " Doxygen注释
-Plug 'vim-scripts/DoxygenToolkit.vim'
+" Plug 'vim-scripts/DoxygenToolkit.vim'
 
 " For Python
-Plug 'vim-scripts/python.vim', {'for': 'python'}
+" Plug 'vim-scripts/python.vim', {'for': 'python'}
 " Plug 'davidhalter/jedi-vim' ", {'for': 'python'}
 " Plug 'python-mode/python-mode', { 'branch': 'develop', 'for': 'python' }
 " Plug 'raimon49/requirements.txt.vim', {'for': 'requirements'}
 
 
 " Plug 'vim-scripts/SuperTab', {'on': []}
-Plug 'vim-scripts/AutoClose'
+" Plug 'vim-scripts/AutoClose'
 
 " Plug 'thaerkh/vim-workspace'
 
@@ -132,15 +135,14 @@ Plug 'vim-scripts/AutoClose'
 " Plug 'vim-scripts/minibufexpl.vim'
 
 " Some themes
-Plug 'crusoexia/vim-monokai'
-Plug 'jaromero/vim-monokai-refined'
-Plug 'iCyMind/NeoSolarized'
-Plug 'altercation/vim-colors-solarized'
+" Plug 'crusoexia/vim-monokai'
+" Plug 'jaromero/vim-monokai-refined'
+" Plug 'iCyMind/NeoSolarized'
+" Plug 'altercation/vim-colors-solarized'
 Plug 'rakr/vim-one'
 
-Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
-Plug 'Yggdroot/indentLine'
-
+" Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
+" Plug 'Yggdroot/indentLine'
 
 " Vim 异步语法检查 
 " This plugin requires Vim 8.0 or above to run, or NeoVim
@@ -151,6 +153,17 @@ Plug 'w0rp/ale' ", {'on':[]}
 
 " For Spell
 " Plug 'vim-scripts/SpellCheck'
+
+"For SCIP
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Plug 'Olical/vim-scheme', { 'for': 'scheme', 'on': 'SchemeConnect' }
+
+" You'll need vim-sexp too for selecting forms.
+" Plug 'guns/vim-sexp'
+
+" And while you're here, tpope's bindings make vim-sexp a little nicer to use.
+" Plug 'tpope/vim-sexp-mappings-for-regular-people'
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 call plug#end()
 
