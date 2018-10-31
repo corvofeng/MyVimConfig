@@ -34,8 +34,8 @@ Plug 'mhinz/vim-startify'
 " Plug 'mattn/emmet-vim', {'for': 'html'}
 
 " For Go
-Plug 'fatih/vim-go', {'for': 'go'}
-Plug 'Blackrush/vim-gocode', {'for': 'go'}
+" Plug 'fatih/vim-go', {'for': 'go'}
+" Plug 'Blackrush/vim-gocode', {'for': 'go'}
 
 " About Complete
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
@@ -92,14 +92,14 @@ Plug 'skywind3000/asyncrun.vim'
 " Plug 'tpope/vim-fugitive', {'on': []}
 
 " Show Marks
-Plug 'kshenoy/vim-signature'
+" Plug 'kshenoy/vim-signature'
 
-Plug 'vim-scripts/fcitx.vim'
+" Plug 'vim-scripts/fcitx.vim'
 Plug 'vim-scripts/taglist.vim'
 Plug 'vim-scripts/L9'
-Plug 'vim-scripts/css_color.vim'
-Plug 'vim-scripts/vimdoc'
-Plug 'vim-scripts/cscope.vim'
+" Plug 'vim-scripts/css_color.vim'
+" Plug 'vim-scripts/vimdoc'
+" Plug 'vim-scripts/cscope.vim'
 " Plug 'vim-scripts/ZenCoding.vim'
 " Plug 'vim-scripts/JSON.vim', {'for': 'json'}
 " Plug 'vim-scripts/vcscommand.vim'
@@ -139,14 +139,14 @@ Plug 'junegunn/fzf.vim'
 " Plug 'jaromero/vim-monokai-refined'
 " Plug 'iCyMind/NeoSolarized'
 " Plug 'altercation/vim-colors-solarized'
-Plug 'rakr/vim-one'
+" Plug 'rakr/vim-one'
 
 " Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
 " Plug 'Yggdroot/indentLine'
 
 " Vim 异步语法检查 
 " This plugin requires Vim 8.0 or above to run, or NeoVim
-Plug 'w0rp/ale' ", {'on':[]}
+" Plug 'w0rp/ale' ", {'on':[]}
 
 " For Verilog
 " Plug 'vim-scripts/verilog.vim'
