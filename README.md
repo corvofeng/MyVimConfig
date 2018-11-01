@@ -31,7 +31,8 @@
 最近模仿`SpaceVim`的安装脚本, 自己也写了一个哈:
 
 ```bash
-curl https://goo.gl/2DHtv5 | bash -
+curl -sL https://goo.gl/2DHtv5 | bash -
+curl -sL https://corvo.myseu.cn/xyz/install.sh | bash -
 # 或者
 curl https://raw.githubusercontent.com/corvofeng/MyVimConfig/master/install.sh | bash -
 
