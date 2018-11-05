@@ -140,6 +140,7 @@ autocmd FileType go set nolist "omnifunc=gocomplete#Complete nolist
 au Filetype c,cpp setl sw=4 sts=4 ts=4 et " C, C++: 缩进8个字符
 au Filetype json setl sw=2 sts=2 ts=2 et  " JSON: 缩进8个字符
 au Filetype asm setl sw=8 sts=8 ts=8 et   " 汇编代码
+au Filetype typescript setl sw=2 sts=2 ts=2 et  " typescript: 缩进2个字符
 
 "au FileType java setl omnifunc=javacomplete#Complete sw=4 sts=4 et
 "autocmd FileType javascrīpt set omnifunc=javascriptcomplete#CompleteJS
@@ -157,9 +158,9 @@ let g:go_fmt_autosave = 0
 
 let g:pydiction_location='/home/corvo/.vim/complete-dict'
 "let g:pydiction_menu_height = 5
-if has("autocmd")
-    autocmd FileType python set complete+=k/home/corvo/.vim/pydiction iskeyword+=.,(
-endif " has("autocmd")
+" if has("autocmd")
+"     autocmd FileType python set complete+=k/home/corvo/.vim/pydiction iskeyword+=.,(
+" endif " has("autocmd")
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " VimWiki, 必须放置在vimrc中, 放在gvimrc中无法读入设置
