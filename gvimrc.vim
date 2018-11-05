@@ -5,11 +5,13 @@
 
 " set guifont=Source\ Code\ Pro\ Medium\ 11
 set guifont=Fira\ Code\ Medium\ 11
+" 中文字体需要额外设置
+set guifontwide=WenQuanYi\ Micro\ Hei\ Mono\ 11
 " let g:Powerline_colorscheme='solarized256'
 " colorscheme monokai
 " colorscheme solarized
-" colorscheme NeoSolarized
-colorscheme one
+colorscheme NeoSolarized
+" colorscheme one
 " colorscheme monokai
 
 let g:livepreview_previewer = 'okular'
