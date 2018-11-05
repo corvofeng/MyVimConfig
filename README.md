@@ -2,12 +2,12 @@
 
 ![Vim](https://img.shields.io/badge/Vim-Best%20Editor-green.svg)
 
-> 作为多年的`linux`和`vim`粉, 我好像正在被分享所融化, 曾经我的`.vim`文件夹中杂乱不堪,
-> 开始接触`vundle`时, 我的内心是拒绝的, 我很辛苦才将`you-complete-me` 配置成功,
-> 不想因为一个包管理而将辛苦配置的插件丢失, 但是linux的吸引之处绝不是混乱不堪, 
-> 而是清晰, 有条理. 我花了一上午的时间将我的`.vim`目录配套了`vundle`包管理, 
-> 这真是一个性感的工具, 基本上一条命令基本就可以将`vim`配置完成. 
-
+> 曾经我的`.vim`文件夹中杂乱不堪, 而后开始接触了`vundle`, 而后又换到了`vim-plug`
+> 经过这些年的整理, vundlerc.vim文件中记录了目前使用的插件.
+>
+> 而后模仿`SpaceVim`的安装脚本, 自己也写了一个
+>
+> 一条命令就能将插件安装的七七八八.
 
 ## `.vim`目录结构
 
@@ -16,10 +16,10 @@
 ├── bundle/             # 插件存放文件夹
 ├── UltiSnips/          # 我的snip存放文件夹
 ├── vrapperrc           # .vrapperrc eclipse vrapperrc插件配置
-├── vimrc               # .vimrc
-├── gvimrc              # .gvimrc
+├── vimrc.vim           # .vimrc
+├── gvimrc.vim          # .gvimrc
 ├── ycm_extra_conf.py   # YCM 配置文件
-└── vundlerc            # Bundle插件存放
+└── vundlerc.vim        # Bundle插件存放
 2 directories, 5 files
 ```
 
@@ -27,8 +27,6 @@
 
 
 1. 安装
-
-最近模仿`SpaceVim`的安装脚本, 自己也写了一个哈:
 
 ```bash
 curl -sL https://goo.gl/2DHtv5 | bash -
@@ -40,21 +38,14 @@ curl https://raw.githubusercontent.com/corvofeng/MyVimConfig/master/install.sh |
 ./.vim/install.sh
 ```
 
-建议将特定文件软链接到家目录, 这样修改一个文件的同时会进行同步
+自动创建软链接到家目录, 这样修改一个文件的同时会进行同步
 
-<!-- 1. 首先添加`.vimrc`等文件
-
-```bash
-git clone https://github.com/corvofeng/MyVimConfig.git ~/.vim
-ln -s ~/.vim/vimrc.vim ~/.vimrc
-ln -s ~/.vim/gvimrc.vim ~/.gvimrc
-ln -s ~/.vim/vrapperrc ~/.vrapperrc
-```
- -->
 2. 安装插件
+
 ```bash
-vim +BundleInstall +PlugInstall
+vim +PlugInstall
 ```
+
 默认读者有过基本`vim`操作技能
 
 
@@ -64,7 +55,7 @@ vim +BundleInstall +PlugInstall
 > 还没有能深入使用
 
 
-## vimrc
+## vimrc.vim
 
 > vimrc中许多行都有注释, 我只挑`DIY`的重点来贴,
 > 希望大家有所收获, 也能自定义出自己的配置, 适合自己的才是最好的
@@ -134,7 +125,7 @@ let g:UltiSnipsJumpForwardTrigger='<c-k>'
 let g:UltiSnipsJumpBackwardTrigger='<c-s-k>'
 let g:UltiSnipsSnippetsDir='~/.vim/UltiSnips'
 
-"Tablur 强大的对齐工具 
+"Tablur 强大的对齐工具
 let mapleader=','
 if exists(":Tabularize")
 nmap <Leader>a= :Tabularize /=<CR>
