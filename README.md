@@ -3,11 +3,10 @@
 ![Vim](https://img.shields.io/badge/Vim-Best%20Editor-green.svg)
 
 > 曾经我的`.vim`文件夹中杂乱不堪, 而后开始接触了`vundle`, 而后又换到了`vim-plug`
-> 经过这些年的整理, vundlerc.vim文件中记录了目前使用的插件.
->
-> 而后模仿`SpaceVim`的安装脚本, 自己也写了一个
->
-> 一条命令就能将插件安装的七七八八.
+> 现在一条命令就能将插件安装的七七八八, 经过这些年的整理,
+> vundlerc.vim文件中记录了目前使用的插件.
+
+> 也模仿`SpaceVim`的安装脚本, 自己也写了一个.
 
 ## `.vim`目录结构
 
