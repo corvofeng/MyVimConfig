@@ -150,15 +150,14 @@ fetch_repo () {
 
 # install_vim {{{
 install_vim () {
-  if [[ -f "$HOME/.vimrc" ]]; then
-    mv "$HOME/.vimrc" "$HOME/.vimrc_back"
-    success "Backup $HOME/.vimrc to $HOME/.vimrc_back"
-  fi
-
   if [[ -d "$HOME/.vim" ]]; then
     if [[ ! "$(readlink $HOME/.vim)" =~ \.CoolVim$ ]]; then
       mv "$HOME/.vim" "$HOME/.vim_back"
       success "BackUp $HOME/.vim to $HOME/.vim_back"
+
+      mv "$HOME/.vimrc" "$HOME/.vimrc_back"
+      success "Backup $HOME/.vimrc to $HOME/.vimrc_back"
+
       ln -s "$HOME/.CoolVim" "$HOME/.vim"
     fi
   else
@@ -184,9 +183,10 @@ install_vim () {
 
 # create_symbol {{{
 create_symbol () {
-    ln -s ~/.vim/vimrc.vim ~/.vimrc
-    ln -s ~/.vim/gvimrc.vim ~/.gvimrc
-    ln -s ~/.vim/vrapperrc ~/.vrapperrc
+  [ -f ~/.vimrc ]     || ln -s ~/.vim/vimrc.vim ~/.vimrc
+  [ -f ~/.gvimrc ]    || ln -s ~/.vim/gvimrc.vim ~/.gvimrc
+  [ -f ~/.vrapperrc ] || ln -s ~/.vim/vrapperrc ~/.vrapperrc
+  success "Create vimrc&gvimrc for vim"
 }
 # }}}
 
@@ -446,7 +446,7 @@ main () {
     create_symbol
     # install_neovim
     # install_package_manager
-    install_fonts
+    # install_fonts
     install_done
   fi
 }
