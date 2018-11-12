@@ -1,4 +1,4 @@
-" set syntax=vim
+" vim: foldmethod=marker foldcolumn=3 syntax=vim
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -48,6 +48,8 @@ Plug 'mhinz/vim-startify'
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
 
+" For typescript
+" Plug 'leafgarland/typescript-vim'
 
 " AsyncRun 异步运行 Recommend to use Vim 8.0 or later.
 Plug 'skywind3000/asyncrun.vim'
