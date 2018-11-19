@@ -142,7 +142,7 @@ fetch_repo () {
     success "Successfully update CoolVim"
   else
     info "Trying to clone CoolVim"
-    git clone https://github.com/corvofeng/MyVimConfig.git "$HOME/.CoolVim"
+    git clone https://github.com/corvofeng/MyVimConfig.git "$HOME/.CoolVim" --depth=1
     success "Successfully clone CoolVim"
   fi
 }
