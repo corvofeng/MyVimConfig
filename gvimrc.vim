@@ -27,7 +27,7 @@ set foldenable
 " highlight NonText guibg=#060606
 hi Folded ctermbg=7
 hi Folded ctermbg=242
-hi! link Folded SignColumn 
+hi! link Folded SignColumn
 let g:tlist_markdown_settings = 'markdown;h:Headlins'
 let g:tlist_tex_settings = 'latex;l:labels;s:sections;t:subsections;u:subsubsections'
 
@@ -37,7 +37,7 @@ function! ToggleFullScreen()
 endfunction
 map <silent> <F7> :call ToggleFullScreen()<CR>
 
-" Markdown的折叠
+"{{{ Markdown的折叠
 " https://stackoverflow.com/questions/3828606/vim-markdown-folding
 function! MarkdownLevel()
     let curline = getline(v:lnum)
@@ -70,49 +70,7 @@ endfunction
 au BufEnter *.md setlocal foldexpr=MarkdownLevel()
 au BufEnter *.md setlocal foldmethod=syntax
 au BufEnter *.md setlocal foldtext=MarkdownFoldText()
-
-autocmd FileType python set foldmethod=indent
-
-" ALE 检查语法错误
-" let &runtimepath.=',~/.vim/bundle/ale'
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚡'
-let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
-
-
-" 对C/C++使用Clang进行语法检查
-let g:ale_linters = {'c': 'clang'}
-let g:ale_linters = {
-            \'cpp': ['clangtidy','cpplint'],
-            \'python': ['pylint']
-            \}
-let g:ale_fixers = {'python': ['autopep8']}
-let g:ale_cpp_gcc = 1
-let ale_cpp_clang_options = '
-    \ -std=c++14 -Wall
-    \ `wx-config --cxxflags --libs std,aui`
-    \ -I/usr/lib/wx/include/gtk2-unicode-3.0
-    \ -I/usr/include/wx-3.0
-    \ -D_FILE_OFFSET_BITS=64
-    \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
-
-let g:ale_cpp_gcc_options = '
-    \ -std=c++14 -Wall
-    \`wx-config --cxxflags --libs std,aui`
-    \ -I/usr/lib/wx/include/gtk2-unicode-3.0
-    \ -I/usr/include/wx-3.0
-    \ -D_FILE_OFFSET_BITS=64
-    \ -D_FILE_OFFSET_BITS=64 -DWXUSINGDLL -D__WXGTK__ -pthread'
-let g:ale_cpp_clangtidy_options = 'p ./build/'
-let ale_c_build_dir='./build'
-
-" C0111: 函数必须有注释, 暂时进行屏蔽
-" C0326: 赋值号之前只能有一个空格, 我认为这样代码并不美观
-let g:ale_python_pylint_options = '--disable=C0111'
-
-nmap <silent> <C-k> <Plug>(ale_previous_wrap)
-nmap <silent> <C-j> <Plug>(ale_next_wrap)
+" }}}
 
 " gvim 添加语法检查, 曾经使用syntastic, 现已使用ALE
 " set statusline+=%#warningmsg#
@@ -159,8 +117,6 @@ let g:airline#extensions#tabline#formatter = 'default'
 "set statusline+=%{exists('g:loaded_syntastic_plugin')?SyntasticStatuslineFlag():''}
 highlight LeaderTab guifg=#666666
 match LeaderTab /^\t/
-
-set cursorline   " 突出显示当前行
 
 " runtime! ftplugin/man.vim
 
