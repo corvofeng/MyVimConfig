@@ -15,6 +15,9 @@ set smartindent
 set autoindent
 set cursorline   " 突出显示当前行
 
+set t_Co=256   " This is may or may not needed.
+colorscheme NeoSolarized
+
 " vertical line indentation
 let g:indentLine_color_term = 239
 let g:indentLine_color_gui = '#09AA08'
