@@ -15,6 +15,7 @@ set smartindent
 set autoindent
 set cursorline   " 突出显示当前行
 
+set bg=light
 set t_Co=256   " This is may or may not needed.
 colorscheme NeoSolarized
 

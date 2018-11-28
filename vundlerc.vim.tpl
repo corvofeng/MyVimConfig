@@ -139,7 +139,7 @@ Plug 'junegunn/fzf.vim'
 " Some themes
 " Plug 'crusoexia/vim-monokai'
 " Plug 'jaromero/vim-monokai-refined'
-" Plug 'iCyMind/NeoSolarized'
+Plug 'iCyMind/NeoSolarized'
 " Plug 'altercation/vim-colors-solarized'
 " Plug 'rakr/vim-one'
 
