@@ -4,6 +4,17 @@ snippet title "Python title"
 # vim: ts=4 sw=4 tw=99 et:
 
 """
+
+"""
+
+endsnippet
+
+snippet full_title "Python title fully"
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+# vim: ts=4 sw=4 tw=99 et:
+
+"""
 @Date   : `!v strftime("%B %d, %Y")`
 @Author : `!v g:snips_author`
 
@@ -13,6 +24,7 @@ endsnippet
 
 
 snippet dbg "use IPython to debug"
+import traceback; traceback.print_stack()
 import IPython; IPython.embed()
 endsnippet
 
@@ -21,5 +33,4 @@ snippet gitig "Git add will ignore this"
 $1
 ####### XXX: Can't GIT add  [END]  #########
 endsnippet
-
 
