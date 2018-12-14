@@ -1,7 +1,5 @@
 snippet title "Python title"
-#!/usr/bin/env python
 # -*- coding: utf-8 -*-
-# vim: ts=4 sw=4 tw=99 et:
 
 """
 
@@ -23,9 +21,12 @@ snippet full_title "Python title fully"
 endsnippet
 
 
-snippet dbg "use IPython to debug"
-import traceback; traceback.print_stack()
+snippet dbg "Use IPython to debug"
 import IPython; IPython.embed()
+endsnippet
+
+snippet stk "Print python stack"
+import traceback; traceback.print_stack()
 endsnippet
 
 snippet gitig "Git add will ignore this"
