@@ -575,7 +575,32 @@ let ale_c_build_dir='./build'
 
 " C0111: 函数必须有注释, 暂时进行屏蔽
 " C0326: 赋值号之前只能有一个空格, 我认为这样代码并不美观
+let g:ale_python_pyflakes_auto_pipenv=1
 let g:ale_python_pylint_options = '--disable=C0111'
+
+let g:ale_echo_cursor = 1
+let g:ale_echo_msg_error_str = 'Error'
+let g:ale_echo_msg_format = '%s'
+let g:ale_echo_msg_warning_str = 'Warning'
+let g:ale_enabled = 1
+let g:ale_keep_list_window_open = 0
+let g:ale_lint_delay = 200
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_save = 0
+let g:ale_lint_on_text_changed = 1
+let g:ale_linter_aliases = {}
+let g:ale_linters = {}
+let g:ale_open_list = 0
+let g:ale_set_highlights = 1
+let g:ale_set_loclist = 1
+let g:ale_set_quickfix = 0
+let g:ale_set_signs = 1
+let g:ale_sign_column_always = 0
+let g:ale_sign_error = '💣'
+let g:ale_sign_offset = 1000000
+let g:ale_sign_warning = '🚩'
+let g:ale_statusline_format = ['💣 %d', '🚩 %d', '']
+let g:ale_warn_about_trailing_whitespace = 1
 
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
 nmap <silent> <C-j> <Plug>(ale_next_wrap)
@@ -600,7 +625,7 @@ let g:UltiSnipsEditSplit="vertical"
 " 标准snip变量, 使用时不建议直接修改这里, 建议放在~/.vim/my.vim中进行
 let g:snips_author="corvo"
 let g:snips_projectname="default"
-let g:ultisnips_python_style="google"       " python注释风格
+let g:ultisnips_python_style="sphinx"       " python注释风格
 
 " 自定义: 周报相关的标签
 let g:snip_zhoubao_sector="部门"
