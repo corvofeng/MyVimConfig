@@ -541,10 +541,10 @@ autocmd FileType python set foldmethod=indent
 
 " {{{ ALE 检查语法错误
 " let &runtimepath.=',~/.vim/bundle/ale'
-let g:ale_sign_error = '✗'
-let g:ale_sign_warning = '⚡'
-let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
-let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
+" "let g:ale_sign_error = '✗'
+" "let g:ale_sign_warning = '⚡'
+" "let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
+" "let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
 
 " 对C/C++使用Clang进行语法检查
@@ -553,6 +553,7 @@ let g:ale_linters = {
             \'cpp': ['clangtidy','cpplint'],
             \'python': ['pylint']
             \}
+
 let g:ale_fixers = {'python': ['autopep8']}
 let g:ale_cpp_gcc = 1
 let ale_cpp_clang_options = '
@@ -575,8 +576,8 @@ let ale_c_build_dir='./build'
 
 " C0111: 函数必须有注释, 暂时进行屏蔽
 " C0326: 赋值号之前只能有一个空格, 我认为这样代码并不美观
-let g:ale_python_pyflakes_auto_pipenv=1
-let g:ale_python_pylint_options = '--disable=C0111'
+" let g:ale_python_pyflakes_auto_pipenv=1
+" let g:ale_python_pylint_options = '--disable=C0111'
 
 let g:ale_echo_cursor = 1
 let g:ale_echo_msg_error_str = 'Error'
@@ -589,7 +590,7 @@ let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 1
 let g:ale_linter_aliases = {}
-let g:ale_linters = {}
+"let g:ale_linters = {}
 let g:ale_open_list = 0
 let g:ale_set_highlights = 1
 let g:ale_set_loclist = 1
