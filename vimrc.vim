@@ -548,13 +548,15 @@ autocmd FileType python set foldmethod=indent
 
 
 " 对C/C++使用Clang进行语法检查
-let g:ale_linters = {'c': 'clang'}
+" 'python': ['pylint']
 let g:ale_linters = {
+            \'c': ['clang'],
             \'cpp': ['clangtidy','cpplint'],
-            \'python': ['pylint']
+            \'python': ['pycodestyle']
             \}
 
 let g:ale_fixers = {'python': ['autopep8']}
+
 let g:ale_cpp_gcc = 1
 let ale_cpp_clang_options = '
     \ -std=c++14 -Wall
@@ -589,7 +591,7 @@ let g:ale_lint_delay = 200
 let g:ale_lint_on_enter = 1
 let g:ale_lint_on_save = 0
 let g:ale_lint_on_text_changed = 1
-let g:ale_linter_aliases = {}
+"let g:ale_linter_aliases = {}
 "let g:ale_linters = {}
 let g:ale_open_list = 0
 let g:ale_set_highlights = 1
