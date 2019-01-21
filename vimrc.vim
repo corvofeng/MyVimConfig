@@ -281,8 +281,8 @@ endif
 map <C-F5> :!ctags -R --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 " 设置Python文件tag显示
-let tlist_python_settings = 'python;c:class;f:function;m:class_method;v:variables'                     
-let tlist_golang_settings = 'golang;f:func;v:var;t:type'                     
+let tlist_python_settings = 'python;c:class;f:function;m:class_method;v:variables'
+let tlist_golang_settings = 'golang;f:func;v:var;t:type'
 
 let Tlist_Auto_Highlight_Tag   = 1
 let Tlist_Auto_Update          = 1
@@ -546,13 +546,23 @@ autocmd FileType python set foldmethod=indent
 " "let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
 " "let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
+call ale#linter#Define('htmldjango', {
+            \   'name': 'eslint',
+            \   'output_stream': 'both',
+            \   'executable_callback': 'ale#handlers#eslint#GetExecutable',
+            \   'command_callback': 'ale#handlers#eslint#GetCommand',
+            \   'callback': 'ale#handlers#eslint#Handle',
+            \})
 
 " 对C/C++使用Clang进行语法检查
 " 'python': ['pylint']
+" \'python': ['pycodestyle', 'mypy']
 let g:ale_linters = {
             \'c': ['clang'],
             \'cpp': ['clangtidy','cpplint'],
-            \'python': ['pycodestyle']
+            \'python': ['pycodestyle'],
+            \'javascript': ['eslint'],
+            \'htmldjango': ['eslint'],
             \}
 
 let g:ale_fixers = {'python': ['autopep8']}
@@ -688,7 +698,7 @@ let g:DoxygenToolkit_authorName="corvo"
 "let g:DoxygenToolkit_licenseTag="My own license"
 
 " 在NERDTree中不显示某些后缀的文件
-let NERDTreeIgnore = ['\.pyc$', '\.o$']
+let NERDTreeIgnore = ['\.pyc$', '\.o$', 'pb2\.py$', 'pb2_grpc\.py$']
 
 let g:ycm_semantic_triggers =  {
   \   'c' : ['->', '.'],
