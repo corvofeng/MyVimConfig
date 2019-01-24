@@ -331,7 +331,7 @@ endfunction
 
 " 异步执行函数, 使用copen可以打开执行结果窗口
 function! AsRun(cmd)
-    silent exec "AsyncRun ". a:cmd .""
+    silent exec "AsyncRun! -raw ". a:cmd .""
 endfunction
 
 " C C++ sh java的编译和运行
@@ -343,6 +343,8 @@ func! CompileAndRun()
         call AsRun("gcc -g % -o %< && ./%<")
     elseif &filetype == 'cpp'
         call AsRun("g++ -g % -o %< && ./%<")
+    elseif &filetype == 'go'
+        call AsRun("go run %")
     elseif &filetype == 'sh'                    "Shell Script
         call Xterm("chmod u+x % && ./%")
     elseif &filetype == 'dot'                   "Dot 作图
