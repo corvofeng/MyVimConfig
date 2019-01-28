@@ -295,7 +295,7 @@ let Tlist_Use_Right_Window     = 1
 let Tlist_Use_SingleClick      = 1
 let Tlist_Ctags_Cmd            = '/usr/bin/ctags'
 
-nnoremap <silent> <F8> :TlistToggle <CR>
+nnoremap <silent> <F8> :TagbarToggle<CR>
 
 
 "打开所在文件夹或是终端
