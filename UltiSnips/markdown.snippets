@@ -1,10 +1,10 @@
 
 global !p
 import datetime, calendar
- 
+
 lastFriday = datetime.date.today()
 oneday = datetime.timedelta(days = 1)
- 
+
 while lastFriday.weekday() != calendar.FRIDAY:
     lastFriday -= oneday
 
@@ -18,13 +18,14 @@ start_end = '{}-{}'.format(lastMonday.strftime('%Y.%m.%d'), lastFriday.strftime(
 # 周报部门, 所属组, 作者姓名
 author = 'xxx'
 
- 
 endglobal
 
+# example filename: 2018-12-06-有关Jenkins的一些实践.md
+# we want title: 有关Jenkins的一些实践
 snippet title "Hexo post header" b
 ---
 layout: post
-title: `!p snip.rv = fn[:-3]`
+title: `!p snip.rv = fn.split('-')[-1][:-3]`
 date: `!v strftime("%Y-%m-%d %H:%M:%S")`
 author: `!v g:snips_author`
 tags: 
