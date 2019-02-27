@@ -548,14 +548,6 @@ autocmd FileType python set foldmethod=indent
 " "let g:ale_statusline_format = ['✗ %d', '⚡ %d', '✔ OK']
 " "let g:ale_echo_msg_format = '[%linter%] %s [%severity%]'
 
-call ale#linter#Define('htmldjango', {
-            \   'name': 'eslint',
-            \   'output_stream': 'both',
-            \   'executable_callback': 'ale#handlers#eslint#GetExecutable',
-            \   'command_callback': 'ale#handlers#eslint#GetCommand',
-            \   'callback': 'ale#handlers#eslint#Handle',
-            \})
-
 " 对C/C++使用Clang进行语法检查
 " 'python': ['pylint']
 " \'python': ['pycodestyle', 'mypy']
