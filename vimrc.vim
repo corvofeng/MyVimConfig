@@ -296,6 +296,7 @@ let Tlist_Use_SingleClick      = 1
 let Tlist_Ctags_Cmd            = '/usr/bin/ctags'
 
 nnoremap <silent> <F8> :TagbarToggle<CR>
+nnoremap <silent> <F5> :ALEToggle<CR>
 
 
 "打开所在文件夹或是终端
@@ -551,12 +552,12 @@ autocmd FileType python set foldmethod=indent
 " 对C/C++使用Clang进行语法检查
 " 'python': ['pylint']
 " \'python': ['pycodestyle', 'mypy']
+" \'htmldjango': ['eslint'],
 let g:ale_linters = {
             \'c': ['clang'],
             \'cpp': ['clangtidy','cpplint'],
             \'python': ['pycodestyle'],
             \'javascript': ['eslint'],
-            \'htmldjango': ['eslint'],
             \}
 
 let g:ale_fixers = {'python': ['autopep8']}
