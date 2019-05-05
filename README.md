@@ -12,14 +12,16 @@
 
 ```bash
 .
-├── bundle/             # 插件存放文件夹
+├── plugged/            # 插件存放文件夹
 ├── UltiSnips/          # 我的snip存放文件夹
 ├── vrapperrc           # .vrapperrc eclipse vrapperrc插件配置
+├── common.vim          # vim 与 nvim的共用配置
 ├── vimrc.vim           # .vimrc
 ├── gvimrc.vim          # .gvimrc
+├── nvimrc.vim          # nvim的配置: ln -s ~/.vim/nvimrc.vim ~/.config/nvim/init.vim
 ├── ycm_extra_conf.py   # YCM 配置文件
-└── vundlerc.vim        # Bundle插件存放
-2 directories, 5 files
+├── nvim-plug.py        # nvim插件存放
+└── vim-plug.vim        # vim插件存放
 ```
 
 ## usage

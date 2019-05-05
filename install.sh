@@ -164,8 +164,8 @@ install_vim () {
     ln -s "$HOME/.CoolVim" "$HOME/.vim"
   fi
 
-  if [ ! -f $HOME/.vim/vundlerc.vim ]; then
-    cp $HOME/.vim/vundlerc.vim.tpl $HOME/.vim/vundlerc.vim
+  if [ ! -f $HOME/.vim/vim-plug.vim ]; then
+    cp $HOME/.vim/vim-plug.vim.tpl $HOME/.vim/vim-plug.vim
   fi
   success "Installed CoolVim for vim"
 }

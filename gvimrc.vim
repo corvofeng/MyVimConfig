@@ -4,9 +4,9 @@
 "echomsg "Before gvimrc"
 
 " set guifont=Source\ Code\ Pro\ Medium\ 11
-set guifont=Fira\ Code\ Medium\ 11
+set guifont=Fira\ Code\ Medium\ 12
 " 中文字体需要额外设置
-set guifontwide=WenQuanYi\ Micro\ Hei\ Mono\ 11
+set guifontwide=WenQuanYi\ Micro\ Hei\ Mono\ 12
 " let g:Powerline_colorscheme='solarized256'
 " colorscheme monokai
 " colorscheme solarized
