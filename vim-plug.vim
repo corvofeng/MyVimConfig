@@ -1,1 +1,0 @@
-/home/corvo/Dropbox/config/vundlerc.vim
