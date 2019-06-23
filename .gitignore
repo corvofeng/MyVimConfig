@@ -1,5 +1,6 @@
 # Vim
 vundlerc.vim
+vim-plug.vim
 my.vim
 .netrwhist
 sessions/
