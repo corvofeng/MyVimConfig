@@ -3,7 +3,7 @@ snippet title "JS title"
 // vim: ts=2 sw=2 sts=2 et:
 /*
  *=======================================================================
- *    Filename:`!p snip.rv = fn`
+ *    Filename: `!p snip.rv = get_markdown_title(snip)`
  *
  *     Version: 1.0
  *  Created on: `!v strftime("%B %d, %Y")`
@@ -13,3 +13,8 @@ snippet title "JS title"
  */
 
 endsnippet
+
+global !p
+def get_markdown_title(snip):
+    return snip.fn
+endglobal
