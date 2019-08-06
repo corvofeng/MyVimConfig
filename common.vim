@@ -622,12 +622,14 @@ let g:UltiSnipsExpandTrigger='<C-j>'
 let g:UltiSnipsListSnippets='<C-tab>'
 let g:UltiSnipsJumpForwardTrigger="<C-b>"
 let g:UltiSnipsJumpBackwardTrigger="<C-z>"
+" let g:ultisnips_python_quoting_style="single"
+" let g:ultisnips_python_triple_quoting_style="double"
 
     " \$HOME.'/.vim/plugged/vim-snippets',
 let g:UltiSnipsSnippetDirectories=[
     \$HOME.'/.vim/plugged/vim-snippets/UltiSnips',
     \$HOME.'/.vim/UltiSnips']
-let g:UltiSnipsEditSplit="vertical"
+" let g:UltiSnipsEditSplit="vertical"
 
 " 标准snip变量, 使用时不建议直接修改这里, 建议放在~/.vim/my.vim中进行
 let g:snips_author="corvo"
@@ -719,13 +721,13 @@ let g:calendar_google_task = 1
 let g:NERDTree_title = ""
 let g:winManagerWindowLayout='NERDTree|TagList' "BufExplorer'
 
-function! NERDTree_Start() 
+function! NERDTree_Start()
     " exe 'NERDTree'
-	exe 'q'
-	exec 'NERDTreeToggle'
-endfunction 
+    exe 'q'
+    exec 'NERDTreeToggle'
+endfunction
 
-function! NERDTree_IsValid() 
-	return 1 
+function! NERDTree_IsValid()
+    return 1
 endfunction
 " }}}
