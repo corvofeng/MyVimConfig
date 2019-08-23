@@ -4,6 +4,18 @@ snippet vch "version changed"
 .. version_changed: `!v strftime("%Y-%m-%d")` $1
 endsnippet
 
+snippet vn "note"
+.. note::
+endsnippet
+
+snippet vwa "warning"
+.. warning::
+endsnippet
+
+snippet vad "version added"
+.. versionadded:: `!v strftime("%Y-%m-%d")` $1
+endsnippet
+
 snippet GPL3_PART "For files"
 Copyright `!v &enc[:2] == "utf" ? "©" : "(c)"` `!v strftime("%Y")` ${0:`!v g:snips_author`}
 

@@ -11,25 +11,45 @@
  *=======================================================================
  */
 
-function get_quoting_style() {
-  return SINGLE_QUOTES;
-}
+// import * as fs from "fs";
+// import * as path from "path";
 
-function get_markdown_title() {
-  return jsFuncDecorator("js_markdown_title");
-}
 
-function js_markdown_title(vsContext) {
-  Logger.debug("Get doc:", vsContext.document);
-  Logger.debug("Get pos:", vsContext.position);
-  Logger.debug("Get tok:", vsContext.token);
-  Logger.debug("Get ctx:", vsContext.context);
-  let fn = vsContext.document.fileName;
+LOG.debug("Hello from file");
+let SINGLE_QUOTES = "'";
+let DOUBLE_QUOTES = '"';
 
-  return path.basename(fn, path.extname(fn));
-}
+module.exports = {
+  get_quoting_style: function () {
+    return SINGLE_QUOTES;
+  },
 
-function triple_quotes() {
-  return get_quoting_style().repeat(3);
-}
+  get_markdown_title: function () {
+    return jsFuncDecorator("js_markdown_title");
+  },
 
+  triple_quotes: function () {
+    return get_quoting_style().repeat(3);
+  },
+
+  js_markdown_title: function (vsContext) {
+    let fn = vsContext.document.fileName;
+    return path.basename(fn, path.extname(fn));
+  },
+
+  context_example: function (vsContext) {
+    LOG.debug("Get ctx:", vsContext.context);
+    LOG.debug("Get doc:", vsContext.document);
+    LOG.debug("Get pos:", vsContext.position);
+    LOG.debug("Get tok:", vsContext.token);
+    return vsContext.document.fileName;
+  },
+  test_for_context: function () {
+    return jsFuncDecorator('context_example');
+  },
+
+  test_for_simple: function () {
+    return "This is a simple func which user defined";
+  },
+
+};
