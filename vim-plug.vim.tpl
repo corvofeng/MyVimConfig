@@ -18,6 +18,7 @@ Plug 'scrooloose/nerdtree', {'on': 'NERDTreeToggle'}
 
 " Vim开机画面
 Plug 'mhinz/vim-startify'
+
 " Plug 'yegappan/mru'
 
 " Plug 'xolox/vim-session'
@@ -37,6 +38,10 @@ Plug 'mhinz/vim-startify'
 " Plug 'fatih/vim-go', {'for': 'go'}
 " Plug 'Blackrush/vim-gocode', {'for': 'go'}
 
+
+" Show git changes in file.
+" Plug 'airblade/vim-gitgutter'
+
 " About Complete
 " YouCompleteMe: cd ~/.vim/bundle/YouCompleteMe  && ./install.py --all
 " 我自己的编译方式
@@ -45,6 +50,8 @@ Plug 'mhinz/vim-startify'
 "  --build-dir ~/Project/build-YCM
 " Plug 'Valloric/YouCompleteMe' ", {'on': []}
 
+" Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+
 " ToDo List Manager
 " Plug 'vitalk/vim-simple-todo', {'on': []}
 
@@ -52,7 +59,7 @@ Plug 'mhinz/vim-startify'
 " Plug 'leafgarland/typescript-vim'
 
 " AsyncRun 异步运行 Recommend to use Vim 8.0 or later.
-Plug 'skywind3000/asyncrun.vim'
+" Plug 'skywind3000/asyncrun.vim'
 
 " Evernote
 " Plug 'kakkyz81/evervim', {'on': []}
@@ -64,7 +71,7 @@ Plug 'skywind3000/asyncrun.vim'
 " Plug 'ctrlpvim/ctrlp.vim'
 
 " For Markdown
-" Plug 'plasticboy/vim-markdown'
+Plug 'plasticboy/vim-markdown'
 " Plug 'vim-scripts/Markdown'
 " Plug 'Markdown-syntax'
 
@@ -97,8 +104,8 @@ Plug 'skywind3000/asyncrun.vim'
 " Plug 'kshenoy/vim-signature'
 
 " Plug 'vim-scripts/fcitx.vim'
-Plug 'vim-scripts/taglist.vim'
-Plug 'vim-scripts/L9'
+" Plug 'vim-scripts/taglist.vim'
+" Plug 'vim-scripts/L9'
 " Plug 'vim-scripts/css_color.vim'
 " Plug 'vim-scripts/vimdoc'
 " Plug 'vim-scripts/cscope.vim'
@@ -146,7 +153,7 @@ Plug 'iCyMind/NeoSolarized'
 " Plug 'vim-scripts/Tabular' " , {'on': 'Tabular'}
 " Plug 'Yggdroot/indentLine'
 
-" Vim 异步语法检查 
+" Vim 异步语法检查
 " This plugin requires Vim 8.0 or above to run, or NeoVim
 " Plug 'w0rp/ale' ", {'on':[]}
 

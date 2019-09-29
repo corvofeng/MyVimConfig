@@ -1,6 +1,7 @@
 # Vim
 vundlerc.vim
 vim-plug.vim
+nvim-plug.vim
 my.vim
 .netrwhist
 sessions/

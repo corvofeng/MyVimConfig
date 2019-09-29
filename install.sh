@@ -167,7 +167,11 @@ install_vim () {
   if [ ! -f $HOME/.vim/vim-plug.vim ]; then
     cp $HOME/.vim/vim-plug.vim.tpl $HOME/.vim/vim-plug.vim
   fi
-  success "Installed CoolVim for vim"
+
+  if [ ! -f $HOME/.vim/nvim-plug.vim ]; then
+    cp $HOME/.vim/vim-plug.vim.tpl $HOME/.vim/nvim-plug.vim
+  fi
+  success "Installed CoolVim for vim and nvim"
 }
 # }}}
 
