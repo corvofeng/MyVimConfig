@@ -32,7 +32,7 @@ if [ ! -e $CSSFILE ]; then
     cp ~/.vim/wiki/github-pandoc.css $OUTDIR
 fi
 if [ ! -e $TPL ]; then
-    echo "Please create you own template file"
+    echo "Maybe you should create you own template file"
     TPL=~/.vim/wiki/default.html
 fi
 
