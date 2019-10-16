@@ -314,11 +314,11 @@ endfunction
 nnoremap <silent> <Leader>ml :call AppendModeline()<CR>
 
 " LOAD YCM
-augroup load_us_ycm
-  autocmd!
-  autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
-                     \| autocmd! load_us_ycm
-augroup END
+" augroup load_us_ycm
+"   autocmd!
+"   autocmd InsertEnter * call plug#load('ultisnips', 'YouCompleteMe')
+"                      \| autocmd! load_us_ycm
+" augroup END
 
 " if filereadable("./_gvimrc")
 "     source _gvimrc
