@@ -17,3 +17,8 @@ map <C-J> <C-W>j
 map <C-K> <C-W>k
 noremap <c-h> <c-w>h
 noremap <c-l> <c-w>l
+
+eclipseaction linedown org.eclipse.ui.edit.text.goto.lineDown
+eclipseaction lineup org.eclipse.ui.edit.text.goto.lineUp
+inoremap <C-N> <A-O>linedown<CR>
+inoremap <C-P> <A-O>lineup<CR>
