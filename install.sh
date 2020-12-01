@@ -326,7 +326,7 @@ install_done () {
   echo_with_color ${Yellow} "==    Open Vim or Neovim and it will install the plugins automatically      =="
   echo_with_color ${Yellow} "=============================================================================="
   echo_with_color ${Yellow} ""
-  echo_with_color ${Yellow} "That's it. Thanks for installing SpaceVim. Enjoy!"
+  echo_with_color ${Yellow} "That's it. Thanks for installing CoolVim. Enjoy!"
   echo_with_color ${Yellow} ""
 }
 
