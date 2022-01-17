@@ -178,11 +178,11 @@ let g:pydiction_location='/home/corvo/.vim/complete-dict'
 " \ 'custom_wiki2html_args': 'stuff',
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""
 let g:vimwiki_list = [{
-          \ 'path': '~/Dropbox/Diary/',
-          \ 'template_path': '~/Dropbox/Diary/assets',
+          \ 'path': '~/Sync/Diary/',
+          \ 'template_path': '~/Sync/Diary/assets',
           \ 'template_default': 'default',
           \ 'template_ext': '.html',
-          \ 'diary_rel_path': 'vimwikidiary/',
+          \ 'diary_rel_path': 'vimwikidiary/'. strftime('%Y'),
           \ 'syntax': 'markdown',
           \ 'ext': '.md',
           \ 'path_html': '~/vimwiki/site_html/',
