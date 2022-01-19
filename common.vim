@@ -555,11 +555,18 @@ autocmd FileType python set foldmethod=indent
 let g:ale_linters = {
             \'c': ['clang'],
             \'cpp': ['clangtidy','cpplint'],
+            \'go': ['gofmt'],
             \'python': ['pycodestyle'],
             \'javascript': ['eslint'],
+            \'yaml': ['yamllint'],
             \}
 
-let g:ale_fixers = {'python': ['autopep8']}
+let g:ale_yaml_yamllint_options = "-d \"{extends: default, rules: {line-length: {max: 120}, indentation: {indent-sequences: whatever}}}\""
+
+let g:ale_fixers = {
+            \'python': ['autopep8'],
+            \ 'go': ['gofmt'],
+            \}
 
 let g:ale_cpp_gcc = 1
 let ale_cpp_clang_options = '
