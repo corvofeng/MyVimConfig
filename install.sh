@@ -195,22 +195,22 @@ create_symbol () {
 # }}}
 
 # install_neovim {{{
-# install_neovim () {
-#   if [[ -d "$HOME/.config/nvim" ]]; then
-#     if [[ "$(readlink $HOME/.config/nvim)" =~ \.SpaceVim$ ]]; then
-#       success "Installed SpaceVim for neovim"
-#     else
-#       mv "$HOME/.config/nvim" "$HOME/.config/nvim_back"
-#       success "BackUp $HOME/.config/nvim to $HOME/.config/nvim_back"
-#       ln -s "$HOME/.SpaceVim" "$HOME/.config/nvim"
-#       success "Installed SpaceVim for neovim"
-#     fi
-#   else
-#     mkdir -p "$HOME/.config"
-#     ln -s "$HOME/.SpaceVim" "$HOME/.config/nvim"
-#     success "Installed SpaceVim for neovim"
-#   fi
-# }
+install_neovim () {
+  if [[ -d "$HOME/.config/nvim" ]]; then
+    if [[ "$(readlink $HOME/.config/nvim)" =~ \.CoolVim$ ]]; then
+      success "Installed CoolVim for neovim"
+    else
+      mv "$HOME/.config/nvim" "$HOME/.config/nvim_back"
+      success "BackUp $HOME/.config/nvim to $HOME/.config/nvim_back"
+      ln -s "$HOME/.CoolVim" "$HOME/.config/nvim"
+      success "Installed CoolVim for neovim"
+    fi
+  else
+    mkdir -p "$HOME/.config"
+    ln -s "$HOME/.CoolVim" "$HOME/.config/nvim"
+    success "Installed CoolVim for neovim"
+  fi
+}
 # }}}
 
 # uninstall_vim {{{
@@ -233,18 +233,18 @@ uninstall_vim () {
 # }}}
 
 # uninstall_neovim {{{
-# uninstall_neovim () {
-#   if [[ -d "$HOME/.config/nvim" ]]; then
-#     if [[ "$(readlink $HOME/.config/nvim)" =~ \.SpaceVim$ ]]; then
-#       rm "$HOME/.config/nvim"
-#       success "Uninstall SpaceVim for neovim"
-#       if [[ -d "$HOME/.config/nvim_back" ]]; then
-#         mv "$HOME/.config/nvim_back" "$HOME/.config/nvim"
-#         success "Recover from $HOME/.config/nvim_back"
-#       fi
-#     fi
-#   fi
-# }
+uninstall_neovim () {
+  if [[ -d "$HOME/.config/nvim" ]]; then
+    if [[ "$(readlink $HOME/.config/nvim)" =~ \.CoolVim$ ]]; then
+      rm "$HOME/.config/nvim"
+      success "Uninstall CoolVim for neovim"
+      if [[ -d "$HOME/.config/nvim_back" ]]; then
+        mv "$HOME/.config/nvim_back" "$HOME/.config/nvim"
+        success "Recover from $HOME/.config/nvim_back"
+      fi
+    fi
+  fi
+}
 # }}}
 
 # check_requirements {{{
